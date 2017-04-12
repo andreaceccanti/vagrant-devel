@@ -1,0 +1,3955 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20150312 15:18:35.686" generator="Robot 2.8.6 (Python 2.6.6 on linux2)">
+<suite source="/home/vagrant/git/storm-testsuite/tests/srm/regressions" id="s1" name="Regressions">
+<kw type="setup" name="setup.Setup suite if needed">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="${status}, ${message} = BuiltIn.Run Keyword And Ignore Error">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Variable Should Exist</arg>
+<arg>${STARTED}</arg>
+</arguments>
+<kw type="kw" name="BuiltIn.Variable Should Exist">
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<arguments>
+<arg>${STARTED}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.795" level="FAIL">Variable ${STARTED} does not exist.</msg>
+<status status="FAIL" endtime="20150312 15:18:35.795" starttime="20150312 15:18:35.792"></status>
+</kw>
+<msg timestamp="20150312 15:18:35.795" level="INFO">${status} = FAIL</msg>
+<msg timestamp="20150312 15:18:35.795" level="INFO">${message} = Variable ${STARTED} does not exist.</msg>
+<status status="PASS" endtime="20150312 15:18:35.795" starttime="20150312 15:18:35.792"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Run Keyword If">
+<doc>Runs the given keyword with the given arguments, if `condition` is true.</doc>
+<arguments>
+<arg>"${status}" == "FAIL"</arg>
+<arg>Do setup</arg>
+</arguments>
+<kw type="kw" name="setup.Do setup">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="setup.Setup suite">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="setup.Set global variables">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="${timestamp} = setup.Get timestamp">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="${output} = OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>date +"%k%M%S%d%m%Y"</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.800" level="INFO">Running command 'date +"%k%M%S%d%m%Y" 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:35.804" level="INFO">${output} = 15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:35.803" starttime="20150312 15:18:35.799"></status>
+</kw>
+<msg timestamp="20150312 15:18:35.804" level="INFO">${timestamp} = 15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:35.804" starttime="20150312 15:18:35.799"></status>
+</kw>
+<kw type="kw" name="${uid} = setup.Get uid">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="${output} = OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>id -u</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.811" level="INFO">Running command 'id -u 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:35.815" level="INFO">${output} = 500</msg>
+<status status="PASS" endtime="20150312 15:18:35.815" starttime="20150312 15:18:35.810"></status>
+</kw>
+<msg timestamp="20150312 15:18:35.816" level="INFO">${uid} = 500</msg>
+<status status="PASS" endtime="20150312 15:18:35.815" starttime="20150312 15:18:35.809"></status>
+</kw>
+<kw type="kw" name="setup.Set Variable If It Does Not Exist">
+<doc></doc>
+<arguments>
+<arg>\${TESTDIR}</arg>
+<arg>storm-testsuite_${timestamp.strip()}</arg>
+</arguments>
+<kw type="kw" name="${status}, ${message} = BuiltIn.Run Keyword And Ignore Error">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Variable Should Exist</arg>
+<arg>${name}</arg>
+</arguments>
+<kw type="kw" name="BuiltIn.Variable Should Exist">
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.822" level="FAIL">Variable ${TESTDIR} does not exist.</msg>
+<status status="FAIL" endtime="20150312 15:18:35.822" starttime="20150312 15:18:35.820"></status>
+</kw>
+<msg timestamp="20150312 15:18:35.822" level="INFO">${status} = FAIL</msg>
+<msg timestamp="20150312 15:18:35.822" level="INFO">${message} = Variable ${TESTDIR} does not exist.</msg>
+<status status="PASS" endtime="20150312 15:18:35.822" starttime="20150312 15:18:35.819"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Run Keyword If">
+<doc>Runs the given keyword with the given arguments, if `condition` is true.</doc>
+<arguments>
+<arg>"${status}" == "FAIL"</arg>
+<arg>Set Global Variable</arg>
+<arg>${name}</arg>
+<arg>${value}</arg>
+</arguments>
+<kw type="kw" name="BuiltIn.Set Global Variable">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${name}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.823" level="INFO">${TESTDIR} = storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:35.823" starttime="20150312 15:18:35.823"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:35.823" starttime="20150312 15:18:35.822"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:35.824" starttime="20150312 15:18:35.817"></status>
+</kw>
+<kw type="kw" name="setup.Set Variable If It Does Not Exist">
+<doc></doc>
+<arguments>
+<arg>\${X509AUTH_SA_PROXY}</arg>
+<arg>/tmp/${TESTDIR}/testersgridproxy</arg>
+</arguments>
+<kw type="kw" name="${status}, ${message} = BuiltIn.Run Keyword And Ignore Error">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Variable Should Exist</arg>
+<arg>${name}</arg>
+</arguments>
+<kw type="kw" name="BuiltIn.Variable Should Exist">
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.826" level="FAIL">Variable ${X509AUTH_SA_PROXY} does not exist.</msg>
+<status status="FAIL" endtime="20150312 15:18:35.827" starttime="20150312 15:18:35.825"></status>
+</kw>
+<msg timestamp="20150312 15:18:35.827" level="INFO">${status} = FAIL</msg>
+<msg timestamp="20150312 15:18:35.827" level="INFO">${message} = Variable ${X509AUTH_SA_PROXY} does not exist.</msg>
+<status status="PASS" endtime="20150312 15:18:35.827" starttime="20150312 15:18:35.825"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Run Keyword If">
+<doc>Runs the given keyword with the given arguments, if `condition` is true.</doc>
+<arguments>
+<arg>"${status}" == "FAIL"</arg>
+<arg>Set Global Variable</arg>
+<arg>${name}</arg>
+<arg>${value}</arg>
+</arguments>
+<kw type="kw" name="BuiltIn.Set Global Variable">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${name}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.829" level="INFO">${X509AUTH_SA_PROXY} = /tmp/storm-testsuite_15183512032015/testersgridproxy</msg>
+<status status="PASS" endtime="20150312 15:18:35.829" starttime="20150312 15:18:35.828"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:35.829" starttime="20150312 15:18:35.827"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:35.829" starttime="20150312 15:18:35.824"></status>
+</kw>
+<kw type="kw" name="setup.Set Variable If It Does Not Exist">
+<doc></doc>
+<arguments>
+<arg>\${VOMSAUTH_SA_PROXY}</arg>
+<arg>/tmp/${TESTDIR}/testersvomsproxy</arg>
+</arguments>
+<kw type="kw" name="${status}, ${message} = BuiltIn.Run Keyword And Ignore Error">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Variable Should Exist</arg>
+<arg>${name}</arg>
+</arguments>
+<kw type="kw" name="BuiltIn.Variable Should Exist">
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.832" level="FAIL">Variable ${VOMSAUTH_SA_PROXY} does not exist.</msg>
+<status status="FAIL" endtime="20150312 15:18:35.832" starttime="20150312 15:18:35.831"></status>
+</kw>
+<msg timestamp="20150312 15:18:35.833" level="INFO">${status} = FAIL</msg>
+<msg timestamp="20150312 15:18:35.834" level="INFO">${message} = Variable ${VOMSAUTH_SA_PROXY} does not exist.</msg>
+<status status="PASS" endtime="20150312 15:18:35.833" starttime="20150312 15:18:35.830"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Run Keyword If">
+<doc>Runs the given keyword with the given arguments, if `condition` is true.</doc>
+<arguments>
+<arg>"${status}" == "FAIL"</arg>
+<arg>Set Global Variable</arg>
+<arg>${name}</arg>
+<arg>${value}</arg>
+</arguments>
+<kw type="kw" name="BuiltIn.Set Global Variable">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${name}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.838" level="INFO">${VOMSAUTH_SA_PROXY} = /tmp/storm-testsuite_15183512032015/testersvomsproxy</msg>
+<status status="PASS" endtime="20150312 15:18:35.838" starttime="20150312 15:18:35.838"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:35.838" starttime="20150312 15:18:35.836"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:35.839" starttime="20150312 15:18:35.829"></status>
+</kw>
+<kw type="kw" name="setup.Set Variable If It Does Not Exist">
+<doc></doc>
+<arguments>
+<arg>\${TESTVO_SA_PROXY}</arg>
+<arg>/tmp/${TESTDIR}/testvovomsproxy</arg>
+</arguments>
+<kw type="kw" name="${status}, ${message} = BuiltIn.Run Keyword And Ignore Error">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Variable Should Exist</arg>
+<arg>${name}</arg>
+</arguments>
+<kw type="kw" name="BuiltIn.Variable Should Exist">
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.842" level="FAIL">Variable ${TESTVO_SA_PROXY} does not exist.</msg>
+<status status="FAIL" endtime="20150312 15:18:35.842" starttime="20150312 15:18:35.840"></status>
+</kw>
+<msg timestamp="20150312 15:18:35.842" level="INFO">${status} = FAIL</msg>
+<msg timestamp="20150312 15:18:35.842" level="INFO">${message} = Variable ${TESTVO_SA_PROXY} does not exist.</msg>
+<status status="PASS" endtime="20150312 15:18:35.842" starttime="20150312 15:18:35.840"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Run Keyword If">
+<doc>Runs the given keyword with the given arguments, if `condition` is true.</doc>
+<arguments>
+<arg>"${status}" == "FAIL"</arg>
+<arg>Set Global Variable</arg>
+<arg>${name}</arg>
+<arg>${value}</arg>
+</arguments>
+<kw type="kw" name="BuiltIn.Set Global Variable">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${name}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.843" level="INFO">${TESTVO_SA_PROXY} = /tmp/storm-testsuite_15183512032015/testvovomsproxy</msg>
+<status status="PASS" endtime="20150312 15:18:35.843" starttime="20150312 15:18:35.843"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:35.843" starttime="20150312 15:18:35.843"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:35.843" starttime="20150312 15:18:35.839"></status>
+</kw>
+<kw type="kw" name="setup.Set Variable If It Does Not Exist">
+<doc></doc>
+<arguments>
+<arg>\${NESTED_SA_PROXY}</arg>
+<arg>/tmp/${TESTDIR}/testersvomsproxy</arg>
+</arguments>
+<kw type="kw" name="${status}, ${message} = BuiltIn.Run Keyword And Ignore Error">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Variable Should Exist</arg>
+<arg>${name}</arg>
+</arguments>
+<kw type="kw" name="BuiltIn.Variable Should Exist">
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.846" level="FAIL">Variable ${NESTED_SA_PROXY} does not exist.</msg>
+<status status="FAIL" endtime="20150312 15:18:35.846" starttime="20150312 15:18:35.845"></status>
+</kw>
+<msg timestamp="20150312 15:18:35.847" level="INFO">${status} = FAIL</msg>
+<msg timestamp="20150312 15:18:35.847" level="INFO">${message} = Variable ${NESTED_SA_PROXY} does not exist.</msg>
+<status status="PASS" endtime="20150312 15:18:35.846" starttime="20150312 15:18:35.844"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Run Keyword If">
+<doc>Runs the given keyword with the given arguments, if `condition` is true.</doc>
+<arguments>
+<arg>"${status}" == "FAIL"</arg>
+<arg>Set Global Variable</arg>
+<arg>${name}</arg>
+<arg>${value}</arg>
+</arguments>
+<kw type="kw" name="BuiltIn.Set Global Variable">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${name}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.847" level="INFO">${NESTED_SA_PROXY} = /tmp/storm-testsuite_15183512032015/testersvomsproxy</msg>
+<status status="PASS" endtime="20150312 15:18:35.847" starttime="20150312 15:18:35.847"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:35.848" starttime="20150312 15:18:35.847"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:35.848" starttime="20150312 15:18:35.844"></status>
+</kw>
+<kw type="kw" name="setup.Set Variable If It Does Not Exist">
+<doc></doc>
+<arguments>
+<arg>\${ALIASED_SA_PROXY}</arg>
+<arg>/tmp/${TESTDIR}/testersvomsproxy</arg>
+</arguments>
+<kw type="kw" name="${status}, ${message} = BuiltIn.Run Keyword And Ignore Error">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Variable Should Exist</arg>
+<arg>${name}</arg>
+</arguments>
+<kw type="kw" name="BuiltIn.Variable Should Exist">
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.854" level="FAIL">Variable ${ALIASED_SA_PROXY} does not exist.</msg>
+<status status="FAIL" endtime="20150312 15:18:35.854" starttime="20150312 15:18:35.850"></status>
+</kw>
+<msg timestamp="20150312 15:18:35.854" level="INFO">${status} = FAIL</msg>
+<msg timestamp="20150312 15:18:35.854" level="INFO">${message} = Variable ${ALIASED_SA_PROXY} does not exist.</msg>
+<status status="PASS" endtime="20150312 15:18:35.854" starttime="20150312 15:18:35.849"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Run Keyword If">
+<doc>Runs the given keyword with the given arguments, if `condition` is true.</doc>
+<arguments>
+<arg>"${status}" == "FAIL"</arg>
+<arg>Set Global Variable</arg>
+<arg>${name}</arg>
+<arg>${value}</arg>
+</arguments>
+<kw type="kw" name="BuiltIn.Set Global Variable">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${name}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.857" level="INFO">${ALIASED_SA_PROXY} = /tmp/storm-testsuite_15183512032015/testersvomsproxy</msg>
+<status status="PASS" endtime="20150312 15:18:35.857" starttime="20150312 15:18:35.856"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:35.857" starttime="20150312 15:18:35.855"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:35.857" starttime="20150312 15:18:35.848"></status>
+</kw>
+<kw type="kw" name="setup.Set Variable If It Does Not Exist">
+<doc></doc>
+<arguments>
+<arg>\${TAPE_SA_PROXY}</arg>
+<arg>/tmp/${TESTDIR}/testersvomsproxy</arg>
+</arguments>
+<kw type="kw" name="${status}, ${message} = BuiltIn.Run Keyword And Ignore Error">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Variable Should Exist</arg>
+<arg>${name}</arg>
+</arguments>
+<kw type="kw" name="BuiltIn.Variable Should Exist">
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.862" level="FAIL">Variable ${TAPE_SA_PROXY} does not exist.</msg>
+<status status="FAIL" endtime="20150312 15:18:35.862" starttime="20150312 15:18:35.860"></status>
+</kw>
+<msg timestamp="20150312 15:18:35.862" level="INFO">${status} = FAIL</msg>
+<msg timestamp="20150312 15:18:35.862" level="INFO">${message} = Variable ${TAPE_SA_PROXY} does not exist.</msg>
+<status status="PASS" endtime="20150312 15:18:35.862" starttime="20150312 15:18:35.859"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Run Keyword If">
+<doc>Runs the given keyword with the given arguments, if `condition` is true.</doc>
+<arguments>
+<arg>"${status}" == "FAIL"</arg>
+<arg>Set Global Variable</arg>
+<arg>${name}</arg>
+<arg>${value}</arg>
+</arguments>
+<kw type="kw" name="BuiltIn.Set Global Variable">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${name}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.863" level="INFO">${TAPE_SA_PROXY} = /tmp/storm-testsuite_15183512032015/testersvomsproxy</msg>
+<status status="PASS" endtime="20150312 15:18:35.863" starttime="20150312 15:18:35.863"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:35.863" starttime="20150312 15:18:35.862"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:35.864" starttime="20150312 15:18:35.857"></status>
+</kw>
+<kw type="kw" name="setup.Set Variable If It Does Not Exist">
+<doc></doc>
+<arguments>
+<arg>\${DEFAULT_X509_USER_PROXY}</arg>
+<arg>/tmp/x509up_u${uid}</arg>
+</arguments>
+<kw type="kw" name="${status}, ${message} = BuiltIn.Run Keyword And Ignore Error">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Variable Should Exist</arg>
+<arg>${name}</arg>
+</arguments>
+<kw type="kw" name="BuiltIn.Variable Should Exist">
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.866" level="FAIL">Variable ${DEFAULT_X509_USER_PROXY} does not exist.</msg>
+<status status="FAIL" endtime="20150312 15:18:35.866" starttime="20150312 15:18:35.865"></status>
+</kw>
+<msg timestamp="20150312 15:18:35.867" level="INFO">${status} = FAIL</msg>
+<msg timestamp="20150312 15:18:35.867" level="INFO">${message} = Variable ${DEFAULT_X509_USER_PROXY} does not exist.</msg>
+<status status="PASS" endtime="20150312 15:18:35.866" starttime="20150312 15:18:35.865"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Run Keyword If">
+<doc>Runs the given keyword with the given arguments, if `condition` is true.</doc>
+<arguments>
+<arg>"${status}" == "FAIL"</arg>
+<arg>Set Global Variable</arg>
+<arg>${name}</arg>
+<arg>${value}</arg>
+</arguments>
+<kw type="kw" name="BuiltIn.Set Global Variable">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${name}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.868" level="INFO">${DEFAULT_X509_USER_PROXY} = /tmp/x509up_u500</msg>
+<status status="PASS" endtime="20150312 15:18:35.868" starttime="20150312 15:18:35.867"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:35.868" starttime="20150312 15:18:35.867"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:35.868" starttime="20150312 15:18:35.864"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${TESTDIR}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.868" level="INFO">storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:35.869" starttime="20150312 15:18:35.868"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${X509AUTH_SA_PROXY}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.869" level="INFO">/tmp/storm-testsuite_15183512032015/testersgridproxy</msg>
+<status status="PASS" endtime="20150312 15:18:35.869" starttime="20150312 15:18:35.869"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${VOMSAUTH_SA_PROXY}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.869" level="INFO">/tmp/storm-testsuite_15183512032015/testersvomsproxy</msg>
+<status status="PASS" endtime="20150312 15:18:35.869" starttime="20150312 15:18:35.869"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${DEFAULT_X509_USER_PROXY}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.870" level="INFO">/tmp/x509up_u500</msg>
+<status status="PASS" endtime="20150312 15:18:35.870" starttime="20150312 15:18:35.869"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${TESTVO_SA_PROXY}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.870" level="INFO">/tmp/storm-testsuite_15183512032015/testvovomsproxy</msg>
+<status status="PASS" endtime="20150312 15:18:35.870" starttime="20150312 15:18:35.870"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:35.870" starttime="20150312 15:18:35.798"></status>
+</kw>
+<kw type="kw" name="setup.Init local working directory">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="setup.Create main local directory">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>mkdir /tmp/${TESTDIR}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.873" level="INFO">Running command 'mkdir /tmp/storm-testsuite_15183512032015 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:35.877" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:35.878" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20150312 15:18:35.877" starttime="20150312 15:18:35.872"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.879" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:35.879" starttime="20150312 15:18:35.878"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:35.879" starttime="20150312 15:18:35.871"></status>
+</kw>
+<kw type="kw" name="${x509up} = OperatingSystem.Get Environment Variable">
+<doc>Returns the value of an environment variable with the given name.</doc>
+<arguments>
+<arg>X509_USER_PROXY</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.880" level="INFO">${x509up} = /tmp/x509up_u500</msg>
+<status status="PASS" endtime="20150312 15:18:35.880" starttime="20150312 15:18:35.879"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${x509up}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.880" level="INFO">/tmp/x509up_u500</msg>
+<status status="PASS" endtime="20150312 15:18:35.880" starttime="20150312 15:18:35.880"></status>
+</kw>
+<kw type="kw" name="credentials.Clear all credentials">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="credentials.Stop using certificate">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>rm ${usercert}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.883" level="INFO">Running command 'rm $HOME/.globus/usercert.pem 2&gt;&amp;1'</msg>
+<status status="PASS" endtime="20150312 15:18:35.886" starttime="20150312 15:18:35.882"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>rm -f ${userkey}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.889" level="INFO">Running command 'rm -f $HOME/.globus/userkey.pem 2&gt;&amp;1'</msg>
+<status status="PASS" endtime="20150312 15:18:35.892" starttime="20150312 15:18:35.887"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:35.892" starttime="20150312 15:18:35.881"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Set Environment Variable">
+<doc>Sets an environment variable to a specified value.</doc>
+<arguments>
+<arg>X509_USER_PROXY</arg>
+<arg>${DEFAULT_X509_USER_PROXY}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.894" level="INFO">Environment variable 'X509_USER_PROXY' set to value '/tmp/x509up_u500'</msg>
+<status status="PASS" endtime="20150312 15:18:35.894" starttime="20150312 15:18:35.893"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:35.894" starttime="20150312 15:18:35.881"></status>
+</kw>
+<kw type="kw" name="credentials.Use certificate">
+<doc></doc>
+<arguments>
+<arg>test0</arg>
+</arguments>
+<kw type="kw" name="OperatingSystem.File Should Exist">
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<arguments>
+<arg>${certsDir}/${cert}.cert.pem</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.896" html="yes" level="INFO">File '&lt;a href="file:///usr/share/igi-test-ca/test0.cert.pem"&gt;/usr/share/igi-test-ca/test0.cert.pem&lt;/a&gt;' exists</msg>
+<status status="PASS" endtime="20150312 15:18:35.896" starttime="20150312 15:18:35.895"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.File Should Exist">
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<arguments>
+<arg>${certsDir}/${cert}.key.pem</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.897" html="yes" level="INFO">File '&lt;a href="file:///usr/share/igi-test-ca/test0.key.pem"&gt;/usr/share/igi-test-ca/test0.key.pem&lt;/a&gt;' exists</msg>
+<status status="PASS" endtime="20150312 15:18:35.897" starttime="20150312 15:18:35.896"></status>
+</kw>
+<kw type="kw" name="credentials.Stop using certificate">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>rm ${usercert}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.899" level="INFO">Running command 'rm $HOME/.globus/usercert.pem 2&gt;&amp;1'</msg>
+<status status="PASS" endtime="20150312 15:18:35.903" starttime="20150312 15:18:35.898"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>rm -f ${userkey}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.904" level="INFO">Running command 'rm -f $HOME/.globus/userkey.pem 2&gt;&amp;1'</msg>
+<status status="PASS" endtime="20150312 15:18:35.908" starttime="20150312 15:18:35.903"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:35.909" starttime="20150312 15:18:35.897"></status>
+</kw>
+<kw type="kw" name="stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>cp ${certsDir}/${cert}.cert.pem %{HOME}/.globus/usercert.pem</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.913" level="INFO">Running command 'cp /usr/share/igi-test-ca/test0.cert.pem /home/vagrant/.globus/usercert.pem 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:35.922" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:35.922" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20150312 15:18:35.921" starttime="20150312 15:18:35.912"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.924" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:35.924" starttime="20150312 15:18:35.923"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:35.925" starttime="20150312 15:18:35.910"></status>
+</kw>
+<kw type="kw" name="stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>cp ${certsDir}/${cert}.key.pem %{HOME}/.globus/userkey.pem</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.928" level="INFO">Running command 'cp /usr/share/igi-test-ca/test0.key.pem /home/vagrant/.globus/userkey.pem 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:35.937" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:35.937" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20150312 15:18:35.937" starttime="20150312 15:18:35.927"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.939" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:35.939" starttime="20150312 15:18:35.938"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:35.940" starttime="20150312 15:18:35.925"></status>
+</kw>
+<kw type="kw" name="stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>chmod 400 %{HOME}/.globus/userkey.pem</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.942" level="INFO">Running command 'chmod 400 /home/vagrant/.globus/userkey.pem 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:35.946" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:35.946" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20150312 15:18:35.946" starttime="20150312 15:18:35.941"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.947" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:35.947" starttime="20150312 15:18:35.947"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:35.947" starttime="20150312 15:18:35.940"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:35.948" starttime="20150312 15:18:35.894"></status>
+</kw>
+<kw type="kw" name="credentials.Create voms proxy">
+<doc></doc>
+<arguments>
+<arg>${VOMSAUTH_SA_VONAME}</arg>
+</arguments>
+<kw type="kw" name="${output}, ${stderr} = stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>echo ${privateKeyPassword}|voms-proxy-init -pwstdin --voms ${vo}</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:35.952" level="INFO">Running command 'echo pass|voms-proxy-init -pwstdin --voms test.vo 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:40.349" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:40.349" level="INFO">${output} = Contacting vgrid02.cnaf.infn.it:15000 [/C=IT/O=INFN/OU=Host/L=CNAF/CN=vgrid02.cnaf.infn.it] "test.vo"...
+Remote VOMS server contacted succesfully.
+
+
+Created proxy in /tmp/x509up_u500.
+
+Your proxy is v...</msg>
+<status status="PASS" endtime="20150312 15:18:40.348" starttime="20150312 15:18:35.950"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:40.350" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:40.351" starttime="20150312 15:18:40.350"></status>
+</kw>
+<msg timestamp="20150312 15:18:40.351" level="INFO">${output} = Contacting vgrid02.cnaf.infn.it:15000 [/C=IT/O=INFN/OU=Host/L=CNAF/CN=vgrid02.cnaf.infn.it] "test.vo"...
+Remote VOMS server contacted succesfully.
+
+
+Created proxy in /tmp/x509up_u500.
+
+Your proxy is v...</msg>
+<msg timestamp="20150312 15:18:40.351" level="INFO">${stderr} = </msg>
+<status status="PASS" endtime="20150312 15:18:40.351" starttime="20150312 15:18:35.949"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:40.352" level="INFO">Contacting vgrid02.cnaf.infn.it:15000 [/C=IT/O=INFN/OU=Host/L=CNAF/CN=vgrid02.cnaf.infn.it] "test.vo"...
+Remote VOMS server contacted succesfully.
+
+
+Created proxy in /tmp/x509up_u500.
+
+Your proxy is valid until Fri Mar 13 03:18:39 UTC 2015</msg>
+<status status="PASS" endtime="20150312 15:18:40.352" starttime="20150312 15:18:40.351"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stderr}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:40.352" level="INFO"></msg>
+<status status="PASS" endtime="20150312 15:18:40.352" starttime="20150312 15:18:40.352"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:40.352" starttime="20150312 15:18:35.948"></status>
+</kw>
+<kw type="kw" name="stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>cp ${x509up} ${VOMSAUTH_SA_PROXY}</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:40.358" level="INFO">Running command 'cp /tmp/x509up_u500 /tmp/storm-testsuite_15183512032015/testersvomsproxy 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:40.363" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:40.363" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20150312 15:18:40.362" starttime="20150312 15:18:40.355"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:40.364" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:40.364" starttime="20150312 15:18:40.363"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:40.364" starttime="20150312 15:18:40.353"></status>
+</kw>
+<kw type="kw" name="credentials.Create plain proxy">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="${output}, ${stderr} = stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>echo ${privateKeyPassword} | voms-proxy-init -pwstdin</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:40.368" level="INFO">Running command 'echo pass | voms-proxy-init -pwstdin 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:41.481" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:41.481" level="INFO">${output} = 
+Created proxy in /tmp/x509up_u500.
+
+Your proxy is valid until Fri Mar 13 03:18:40 UTC 2015</msg>
+<status status="PASS" endtime="20150312 15:18:41.480" starttime="20150312 15:18:40.367"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:41.482" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:41.483" starttime="20150312 15:18:41.482"></status>
+</kw>
+<msg timestamp="20150312 15:18:41.483" level="INFO">${output} = 
+Created proxy in /tmp/x509up_u500.
+
+Your proxy is valid until Fri Mar 13 03:18:40 UTC 2015</msg>
+<msg timestamp="20150312 15:18:41.483" level="INFO">${stderr} = </msg>
+<status status="PASS" endtime="20150312 15:18:41.483" starttime="20150312 15:18:40.365"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:41.484" level="INFO">
+Created proxy in /tmp/x509up_u500.
+
+Your proxy is valid until Fri Mar 13 03:18:40 UTC 2015</msg>
+<status status="PASS" endtime="20150312 15:18:41.484" starttime="20150312 15:18:41.483"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stderr}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:41.484" level="INFO"></msg>
+<status status="PASS" endtime="20150312 15:18:41.484" starttime="20150312 15:18:41.484"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:41.485" starttime="20150312 15:18:40.364"></status>
+</kw>
+<kw type="kw" name="stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>cp ${x509up} ${X509AUTH_SA_PROXY}</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:41.487" level="INFO">Running command 'cp /tmp/x509up_u500 /tmp/storm-testsuite_15183512032015/testersgridproxy 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:41.491" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:41.491" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20150312 15:18:41.491" starttime="20150312 15:18:41.486"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:41.492" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:41.492" starttime="20150312 15:18:41.492"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:41.493" starttime="20150312 15:18:41.485"></status>
+</kw>
+<kw type="kw" name="credentials.Use certificate">
+<doc></doc>
+<arguments>
+<arg>apostrofe</arg>
+</arguments>
+<kw type="kw" name="OperatingSystem.File Should Exist">
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<arguments>
+<arg>${certsDir}/${cert}.cert.pem</arg>
+</arguments>
+<msg timestamp="20150312 15:18:41.495" html="yes" level="INFO">File '&lt;a href="file:///usr/share/igi-test-ca/apostrofe.cert.pem"&gt;/usr/share/igi-test-ca/apostrofe.cert.pem&lt;/a&gt;' exists</msg>
+<status status="PASS" endtime="20150312 15:18:41.495" starttime="20150312 15:18:41.494"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.File Should Exist">
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<arguments>
+<arg>${certsDir}/${cert}.key.pem</arg>
+</arguments>
+<msg timestamp="20150312 15:18:41.495" html="yes" level="INFO">File '&lt;a href="file:///usr/share/igi-test-ca/apostrofe.key.pem"&gt;/usr/share/igi-test-ca/apostrofe.key.pem&lt;/a&gt;' exists</msg>
+<status status="PASS" endtime="20150312 15:18:41.495" starttime="20150312 15:18:41.495"></status>
+</kw>
+<kw type="kw" name="credentials.Stop using certificate">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>rm ${usercert}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:41.498" level="INFO">Running command 'rm $HOME/.globus/usercert.pem 2&gt;&amp;1'</msg>
+<status status="PASS" endtime="20150312 15:18:41.501" starttime="20150312 15:18:41.497"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>rm -f ${userkey}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:41.503" level="INFO">Running command 'rm -f $HOME/.globus/userkey.pem 2&gt;&amp;1'</msg>
+<status status="PASS" endtime="20150312 15:18:41.506" starttime="20150312 15:18:41.502"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:41.507" starttime="20150312 15:18:41.496"></status>
+</kw>
+<kw type="kw" name="stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>cp ${certsDir}/${cert}.cert.pem %{HOME}/.globus/usercert.pem</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:41.510" level="INFO">Running command 'cp /usr/share/igi-test-ca/apostrofe.cert.pem /home/vagrant/.globus/usercert.pem 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:41.516" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:41.516" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20150312 15:18:41.516" starttime="20150312 15:18:41.509"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:41.517" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:41.518" starttime="20150312 15:18:41.517"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:41.518" starttime="20150312 15:18:41.507"></status>
+</kw>
+<kw type="kw" name="stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>cp ${certsDir}/${cert}.key.pem %{HOME}/.globus/userkey.pem</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:41.522" level="INFO">Running command 'cp /usr/share/igi-test-ca/apostrofe.key.pem /home/vagrant/.globus/userkey.pem 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:41.526" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:41.526" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20150312 15:18:41.526" starttime="20150312 15:18:41.520"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:41.528" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:41.528" starttime="20150312 15:18:41.527"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:41.528" starttime="20150312 15:18:41.518"></status>
+</kw>
+<kw type="kw" name="stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>chmod 400 %{HOME}/.globus/userkey.pem</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:41.531" level="INFO">Running command 'chmod 400 /home/vagrant/.globus/userkey.pem 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:41.535" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:41.535" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20150312 15:18:41.535" starttime="20150312 15:18:41.530"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:41.536" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:41.537" starttime="20150312 15:18:41.536"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:41.537" starttime="20150312 15:18:41.529"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:41.537" starttime="20150312 15:18:41.493"></status>
+</kw>
+<kw type="kw" name="credentials.Create voms proxy">
+<doc></doc>
+<arguments>
+<arg>${TESTVO_SA_VONAME}</arg>
+</arguments>
+<kw type="kw" name="${output}, ${stderr} = stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>echo ${privateKeyPassword}|voms-proxy-init -pwstdin --voms ${vo}</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:41.543" level="INFO">Running command 'echo pass|voms-proxy-init -pwstdin --voms test.vo 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:45.825" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:45.826" level="INFO">${output} = Contacting vgrid02.cnaf.infn.it:15000 [/C=IT/O=INFN/OU=Host/L=CNAF/CN=vgrid02.cnaf.infn.it] "test.vo"...
+Remote VOMS server contacted succesfully.
+
+
+Created proxy in /tmp/x509up_u500.
+
+Your proxy is v...</msg>
+<status status="PASS" endtime="20150312 15:18:45.825" starttime="20150312 15:18:41.542"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.828" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:45.828" starttime="20150312 15:18:45.827"></status>
+</kw>
+<msg timestamp="20150312 15:18:45.829" level="INFO">${output} = Contacting vgrid02.cnaf.infn.it:15000 [/C=IT/O=INFN/OU=Host/L=CNAF/CN=vgrid02.cnaf.infn.it] "test.vo"...
+Remote VOMS server contacted succesfully.
+
+
+Created proxy in /tmp/x509up_u500.
+
+Your proxy is v...</msg>
+<msg timestamp="20150312 15:18:45.829" level="INFO">${stderr} = </msg>
+<status status="PASS" endtime="20150312 15:18:45.829" starttime="20150312 15:18:41.540"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.829" level="INFO">Contacting vgrid02.cnaf.infn.it:15000 [/C=IT/O=INFN/OU=Host/L=CNAF/CN=vgrid02.cnaf.infn.it] "test.vo"...
+Remote VOMS server contacted succesfully.
+
+
+Created proxy in /tmp/x509up_u500.
+
+Your proxy is valid until Fri Mar 13 03:18:45 UTC 2015</msg>
+<status status="PASS" endtime="20150312 15:18:45.829" starttime="20150312 15:18:45.829"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stderr}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.830" level="INFO"></msg>
+<status status="PASS" endtime="20150312 15:18:45.830" starttime="20150312 15:18:45.830"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:45.830" starttime="20150312 15:18:41.537"></status>
+</kw>
+<kw type="kw" name="stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>cp ${x509up} ${TESTVO_SA_PROXY}</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.837" level="INFO">Running command 'cp /tmp/x509up_u500 /tmp/storm-testsuite_15183512032015/testvovomsproxy 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:45.841" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:45.841" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20150312 15:18:45.841" starttime="20150312 15:18:45.834"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.843" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:45.843" starttime="20150312 15:18:45.842"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:45.843" starttime="20150312 15:18:45.830"></status>
+</kw>
+<kw type="kw" name="credentials.Clear all credentials">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="credentials.Stop using certificate">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>rm ${usercert}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.848" level="INFO">Running command 'rm $HOME/.globus/usercert.pem 2&gt;&amp;1'</msg>
+<status status="PASS" endtime="20150312 15:18:45.851" starttime="20150312 15:18:45.846"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>rm -f ${userkey}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.854" level="INFO">Running command 'rm -f $HOME/.globus/userkey.pem 2&gt;&amp;1'</msg>
+<status status="PASS" endtime="20150312 15:18:45.857" starttime="20150312 15:18:45.852"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:45.858" starttime="20150312 15:18:45.845"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Set Environment Variable">
+<doc>Sets an environment variable to a specified value.</doc>
+<arguments>
+<arg>X509_USER_PROXY</arg>
+<arg>${DEFAULT_X509_USER_PROXY}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.859" level="INFO">Environment variable 'X509_USER_PROXY' set to value '/tmp/x509up_u500'</msg>
+<status status="PASS" endtime="20150312 15:18:45.859" starttime="20150312 15:18:45.859"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:45.859" starttime="20150312 15:18:45.844"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:45.860" starttime="20150312 15:18:35.871"></status>
+</kw>
+<kw type="kw" name="setup.Init remote working directories">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="credentials.Clear all credentials">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="credentials.Stop using certificate">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>rm ${usercert}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.864" level="INFO">Running command 'rm $HOME/.globus/usercert.pem 2&gt;&amp;1'</msg>
+<status status="PASS" endtime="20150312 15:18:45.867" starttime="20150312 15:18:45.863"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>rm -f ${userkey}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.869" level="INFO">Running command 'rm -f $HOME/.globus/userkey.pem 2&gt;&amp;1'</msg>
+<status status="PASS" endtime="20150312 15:18:45.872" starttime="20150312 15:18:45.868"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:45.873" starttime="20150312 15:18:45.862"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Set Environment Variable">
+<doc>Sets an environment variable to a specified value.</doc>
+<arguments>
+<arg>X509_USER_PROXY</arg>
+<arg>${DEFAULT_X509_USER_PROXY}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.874" level="INFO">Environment variable 'X509_USER_PROXY' set to value '/tmp/x509up_u500'</msg>
+<status status="PASS" endtime="20150312 15:18:45.874" starttime="20150312 15:18:45.873"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:45.874" starttime="20150312 15:18:45.861"></status>
+</kw>
+<kw type="kw" name="credentials.Use certificate">
+<doc></doc>
+<arguments>
+<arg>test0</arg>
+</arguments>
+<kw type="kw" name="OperatingSystem.File Should Exist">
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<arguments>
+<arg>${certsDir}/${cert}.cert.pem</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.877" html="yes" level="INFO">File '&lt;a href="file:///usr/share/igi-test-ca/test0.cert.pem"&gt;/usr/share/igi-test-ca/test0.cert.pem&lt;/a&gt;' exists</msg>
+<status status="PASS" endtime="20150312 15:18:45.877" starttime="20150312 15:18:45.876"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.File Should Exist">
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<arguments>
+<arg>${certsDir}/${cert}.key.pem</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.877" html="yes" level="INFO">File '&lt;a href="file:///usr/share/igi-test-ca/test0.key.pem"&gt;/usr/share/igi-test-ca/test0.key.pem&lt;/a&gt;' exists</msg>
+<status status="PASS" endtime="20150312 15:18:45.877" starttime="20150312 15:18:45.877"></status>
+</kw>
+<kw type="kw" name="credentials.Stop using certificate">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>rm ${usercert}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.880" level="INFO">Running command 'rm $HOME/.globus/usercert.pem 2&gt;&amp;1'</msg>
+<status status="PASS" endtime="20150312 15:18:45.883" starttime="20150312 15:18:45.878"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>rm -f ${userkey}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.885" level="INFO">Running command 'rm -f $HOME/.globus/userkey.pem 2&gt;&amp;1'</msg>
+<status status="PASS" endtime="20150312 15:18:45.889" starttime="20150312 15:18:45.884"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:45.889" starttime="20150312 15:18:45.878"></status>
+</kw>
+<kw type="kw" name="stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>cp ${certsDir}/${cert}.cert.pem %{HOME}/.globus/usercert.pem</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.893" level="INFO">Running command 'cp /usr/share/igi-test-ca/test0.cert.pem /home/vagrant/.globus/usercert.pem 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:45.897" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:45.897" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20150312 15:18:45.897" starttime="20150312 15:18:45.891"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.898" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:45.899" starttime="20150312 15:18:45.898"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:45.899" starttime="20150312 15:18:45.890"></status>
+</kw>
+<kw type="kw" name="stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>cp ${certsDir}/${cert}.key.pem %{HOME}/.globus/userkey.pem</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.903" level="INFO">Running command 'cp /usr/share/igi-test-ca/test0.key.pem /home/vagrant/.globus/userkey.pem 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:45.907" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:45.907" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20150312 15:18:45.907" starttime="20150312 15:18:45.901"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.908" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:45.908" starttime="20150312 15:18:45.908"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:45.909" starttime="20150312 15:18:45.899"></status>
+</kw>
+<kw type="kw" name="stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>chmod 400 %{HOME}/.globus/userkey.pem</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.912" level="INFO">Running command 'chmod 400 /home/vagrant/.globus/userkey.pem 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:45.916" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:45.916" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20150312 15:18:45.916" starttime="20150312 15:18:45.910"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.918" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:45.918" starttime="20150312 15:18:45.917"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:45.918" starttime="20150312 15:18:45.909"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:45.918" starttime="20150312 15:18:45.874"></status>
+</kw>
+<kw type="kw" name="credentials.Use proxy">
+<doc></doc>
+<arguments>
+<arg>${VOMSAUTH_SA_PROXY}</arg>
+</arguments>
+<kw type="kw" name="OperatingSystem.File Should Exist">
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<arguments>
+<arg>${proxypath}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.920" html="yes" level="INFO">File '&lt;a href="file:///tmp/storm-testsuite_15183512032015/testersvomsproxy"&gt;/tmp/storm-testsuite_15183512032015/testersvomsproxy&lt;/a&gt;' exists</msg>
+<status status="PASS" endtime="20150312 15:18:45.921" starttime="20150312 15:18:45.920"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Set Environment Variable">
+<doc>Sets an environment variable to a specified value.</doc>
+<arguments>
+<arg>X509_USER_PROXY</arg>
+<arg>${proxypath}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.921" level="INFO">Environment variable 'X509_USER_PROXY' set to value '/tmp/storm-testsuite_15183512032015/testersvomsproxy'</msg>
+<status status="PASS" endtime="20150312 15:18:45.921" starttime="20150312 15:18:45.921"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:45.921" starttime="20150312 15:18:45.918"></status>
+</kw>
+<kw type="kw" name="setup.Create remote working directory">
+<doc></doc>
+<arguments>
+<arg>${VOMSAUTH_SA}</arg>
+</arguments>
+<kw type="kw" name="${surl} = stormlib.Build surl">
+<doc></doc>
+<arguments>
+<arg>${storageArea}</arg>
+<arg>${TESTDIR}</arg>
+</arguments>
+<kw type="kw" name="${output} = BuiltIn.Set Variable">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>srm://${srmEndpoint}/srm/managerv2?SFN=/${storageArea}/${relativePath}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.925" level="INFO">${output} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/test.vo/storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:45.925" starttime="20150312 15:18:45.924"></status>
+</kw>
+<msg timestamp="20150312 15:18:45.925" level="INFO">${surl} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/test.vo/storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:45.925" starttime="20150312 15:18:45.922"></status>
+</kw>
+<kw type="kw" name="${output} = clientSRM.Perform mkdir using clientSRM">
+<doc></doc>
+<arguments>
+<arg>${surl}</arg>
+</arguments>
+<kw type="kw" name="${output} = clientSRM.Execute clientSRM Command on Surl">
+<doc></doc>
+<arguments>
+<arg>mkdir</arg>
+<arg>${surl}</arg>
+<arg>${options}</arg>
+</arguments>
+<kw type="kw" name="${output}, ${stderr} = stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>clientSRM ${cmd} ${options} -e ${srmEndpoint} -s ${surl}</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.931" level="INFO">Running command 'clientSRM mkdir  -e centos6-devel.cnaf.infn.it:8444 -s srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/test.vo/storm-testsuite_15183512032015 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:45.982" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:45.982" level="INFO">${output} = ============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:45.981" starttime="20150312 15:18:45.929"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.983" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:45.983" starttime="20150312 15:18:45.982"></status>
+</kw>
+<msg timestamp="20150312 15:18:45.984" level="INFO">${output} = ============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+=================...</msg>
+<msg timestamp="20150312 15:18:45.984" level="INFO">${stderr} = </msg>
+<status status="PASS" endtime="20150312 15:18:45.984" starttime="20150312 15:18:45.928"></status>
+</kw>
+<msg timestamp="20150312 15:18:45.984" level="INFO">${output} = ============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:45.984" starttime="20150312 15:18:45.927"></status>
+</kw>
+<msg timestamp="20150312 15:18:45.985" level="INFO">${output} = ============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:45.985" starttime="20150312 15:18:45.926"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.986" level="INFO">============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+============================================================
+Request status:
+  statusCode="SRM_SUCCESS"(0)
+  explanation="Directory created with success"
+============================================================
+SRM Response:
+============================================================</msg>
+<status status="PASS" endtime="20150312 15:18:45.986" starttime="20150312 15:18:45.986"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:45.986" starttime="20150312 15:18:45.921"></status>
+</kw>
+<kw type="kw" name="setup.Create remote working directory">
+<doc></doc>
+<arguments>
+<arg>${NESTED_SA}</arg>
+</arguments>
+<kw type="kw" name="${surl} = stormlib.Build surl">
+<doc></doc>
+<arguments>
+<arg>${storageArea}</arg>
+<arg>${TESTDIR}</arg>
+</arguments>
+<kw type="kw" name="${output} = BuiltIn.Set Variable">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>srm://${srmEndpoint}/srm/managerv2?SFN=/${storageArea}/${relativePath}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.989" level="INFO">${output} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/testers.eu-emi.eu/nested/storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:45.989" starttime="20150312 15:18:45.988"></status>
+</kw>
+<msg timestamp="20150312 15:18:45.989" level="INFO">${surl} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/testers.eu-emi.eu/nested/storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:45.989" starttime="20150312 15:18:45.987"></status>
+</kw>
+<kw type="kw" name="${output} = clientSRM.Perform mkdir using clientSRM">
+<doc></doc>
+<arguments>
+<arg>${surl}</arg>
+</arguments>
+<kw type="kw" name="${output} = clientSRM.Execute clientSRM Command on Surl">
+<doc></doc>
+<arguments>
+<arg>mkdir</arg>
+<arg>${surl}</arg>
+<arg>${options}</arg>
+</arguments>
+<kw type="kw" name="${output}, ${stderr} = stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>clientSRM ${cmd} ${options} -e ${srmEndpoint} -s ${surl}</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:45.994" level="INFO">Running command 'clientSRM mkdir  -e centos6-devel.cnaf.infn.it:8444 -s srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/testers.eu-emi.eu/nested/storm-testsuite_15183512032015 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:46.037" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:46.037" level="INFO">${output} = ============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 3
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:46.037" starttime="20150312 15:18:45.992"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.039" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:46.039" starttime="20150312 15:18:46.038"></status>
+</kw>
+<msg timestamp="20150312 15:18:46.040" level="INFO">${output} = ============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 3
+Poll Flag 0
+=================...</msg>
+<msg timestamp="20150312 15:18:46.040" level="INFO">${stderr} = </msg>
+<status status="PASS" endtime="20150312 15:18:46.040" starttime="20150312 15:18:45.991"></status>
+</kw>
+<msg timestamp="20150312 15:18:46.040" level="INFO">${output} = ============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 3
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:46.040" starttime="20150312 15:18:45.990"></status>
+</kw>
+<msg timestamp="20150312 15:18:46.041" level="INFO">${output} = ============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 3
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:46.041" starttime="20150312 15:18:45.989"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.041" level="INFO">============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 3
+Poll Flag 0
+============================================================
+Request status:
+  statusCode="SRM_AUTHORIZATION_FAILURE"(3)
+  explanation="User 'Grid User (VOMS) =  DN:'C=IT, O=IGI, CN=test0' FQANS:[/test.vo/Role=NULL/Capability=NULL, /test.vo/G1/Role=NULL/Capability=NULL, /test.vo/G2/Role=NULL/Capability=NULL, /test.vo/G2/G3/Role=NULL/Capability=NULL]' is not authorized to access 'srm://cen"
+============================================================
+SRM Response:
+============================================================</msg>
+<status status="PASS" endtime="20150312 15:18:46.041" starttime="20150312 15:18:46.041"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:46.042" starttime="20150312 15:18:45.986"></status>
+</kw>
+<kw type="kw" name="setup.Create remote working directory">
+<doc></doc>
+<arguments>
+<arg>${ANONYMOUS_SA}</arg>
+</arguments>
+<kw type="kw" name="${surl} = stormlib.Build surl">
+<doc></doc>
+<arguments>
+<arg>${storageArea}</arg>
+<arg>${TESTDIR}</arg>
+</arguments>
+<kw type="kw" name="${output} = BuiltIn.Set Variable">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>srm://${srmEndpoint}/srm/managerv2?SFN=/${storageArea}/${relativePath}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.045" level="INFO">${output} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/noauth/storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:46.045" starttime="20150312 15:18:46.045"></status>
+</kw>
+<msg timestamp="20150312 15:18:46.046" level="INFO">${surl} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/noauth/storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:46.046" starttime="20150312 15:18:46.044"></status>
+</kw>
+<kw type="kw" name="${output} = clientSRM.Perform mkdir using clientSRM">
+<doc></doc>
+<arguments>
+<arg>${surl}</arg>
+</arguments>
+<kw type="kw" name="${output} = clientSRM.Execute clientSRM Command on Surl">
+<doc></doc>
+<arguments>
+<arg>mkdir</arg>
+<arg>${surl}</arg>
+<arg>${options}</arg>
+</arguments>
+<kw type="kw" name="${output}, ${stderr} = stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>clientSRM ${cmd} ${options} -e ${srmEndpoint} -s ${surl}</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.051" level="INFO">Running command 'clientSRM mkdir  -e centos6-devel.cnaf.infn.it:8444 -s srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/noauth/storm-testsuite_15183512032015 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:46.090" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:46.091" level="INFO">${output} = ============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:46.090" starttime="20150312 15:18:46.049"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.092" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:46.092" starttime="20150312 15:18:46.091"></status>
+</kw>
+<msg timestamp="20150312 15:18:46.093" level="INFO">${output} = ============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+=================...</msg>
+<msg timestamp="20150312 15:18:46.093" level="INFO">${stderr} = </msg>
+<status status="PASS" endtime="20150312 15:18:46.093" starttime="20150312 15:18:46.048"></status>
+</kw>
+<msg timestamp="20150312 15:18:46.094" level="INFO">${output} = ============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:46.093" starttime="20150312 15:18:46.047"></status>
+</kw>
+<msg timestamp="20150312 15:18:46.095" level="INFO">${output} = ============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:46.094" starttime="20150312 15:18:46.046"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.095" level="INFO">============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+============================================================
+Request status:
+  statusCode="SRM_SUCCESS"(0)
+  explanation="Directory created with success"
+============================================================
+SRM Response:
+============================================================</msg>
+<status status="PASS" endtime="20150312 15:18:46.095" starttime="20150312 15:18:46.095"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:46.095" starttime="20150312 15:18:46.042"></status>
+</kw>
+<kw type="kw" name="setup.Create remote working directory">
+<doc></doc>
+<arguments>
+<arg>${TAPE_SA}</arg>
+</arguments>
+<kw type="kw" name="${surl} = stormlib.Build surl">
+<doc></doc>
+<arguments>
+<arg>${storageArea}</arg>
+<arg>${TESTDIR}</arg>
+</arguments>
+<kw type="kw" name="${output} = BuiltIn.Set Variable">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>srm://${srmEndpoint}/srm/managerv2?SFN=/${storageArea}/${relativePath}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.098" level="INFO">${output} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/tape/storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:46.098" starttime="20150312 15:18:46.098"></status>
+</kw>
+<msg timestamp="20150312 15:18:46.099" level="INFO">${surl} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/tape/storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:46.099" starttime="20150312 15:18:46.096"></status>
+</kw>
+<kw type="kw" name="${output} = clientSRM.Perform mkdir using clientSRM">
+<doc></doc>
+<arguments>
+<arg>${surl}</arg>
+</arguments>
+<kw type="kw" name="${output} = clientSRM.Execute clientSRM Command on Surl">
+<doc></doc>
+<arguments>
+<arg>mkdir</arg>
+<arg>${surl}</arg>
+<arg>${options}</arg>
+</arguments>
+<kw type="kw" name="${output}, ${stderr} = stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>clientSRM ${cmd} ${options} -e ${srmEndpoint} -s ${surl}</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.103" level="INFO">Running command 'clientSRM mkdir  -e centos6-devel.cnaf.infn.it:8444 -s srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/tape/storm-testsuite_15183512032015 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:46.142" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:46.142" level="INFO">${output} = ============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 3
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:46.142" starttime="20150312 15:18:46.102"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.144" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:46.144" starttime="20150312 15:18:46.143"></status>
+</kw>
+<msg timestamp="20150312 15:18:46.145" level="INFO">${output} = ============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 3
+Poll Flag 0
+=================...</msg>
+<msg timestamp="20150312 15:18:46.145" level="INFO">${stderr} = </msg>
+<status status="PASS" endtime="20150312 15:18:46.145" starttime="20150312 15:18:46.101"></status>
+</kw>
+<msg timestamp="20150312 15:18:46.145" level="INFO">${output} = ============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 3
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:46.145" starttime="20150312 15:18:46.099"></status>
+</kw>
+<msg timestamp="20150312 15:18:46.146" level="INFO">${output} = ============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 3
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:46.146" starttime="20150312 15:18:46.099"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.146" level="INFO">============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 3
+Poll Flag 0
+============================================================
+Request status:
+  statusCode="SRM_AUTHORIZATION_FAILURE"(3)
+  explanation="User 'Grid User (VOMS) =  DN:'C=IT, O=IGI, CN=test0' FQANS:[/test.vo/Role=NULL/Capability=NULL, /test.vo/G1/Role=NULL/Capability=NULL, /test.vo/G2/Role=NULL/Capability=NULL, /test.vo/G2/G3/Role=NULL/Capability=NULL]' is not authorized to access 'srm://cen"
+============================================================
+SRM Response:
+============================================================</msg>
+<status status="PASS" endtime="20150312 15:18:46.146" starttime="20150312 15:18:46.146"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:46.147" starttime="20150312 15:18:46.096"></status>
+</kw>
+<kw type="kw" name="credentials.Use proxy">
+<doc></doc>
+<arguments>
+<arg>${X509AUTH_SA_PROXY}</arg>
+</arguments>
+<kw type="kw" name="OperatingSystem.File Should Exist">
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<arguments>
+<arg>${proxypath}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.149" html="yes" level="INFO">File '&lt;a href="file:///tmp/storm-testsuite_15183512032015/testersgridproxy"&gt;/tmp/storm-testsuite_15183512032015/testersgridproxy&lt;/a&gt;' exists</msg>
+<status status="PASS" endtime="20150312 15:18:46.149" starttime="20150312 15:18:46.148"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Set Environment Variable">
+<doc>Sets an environment variable to a specified value.</doc>
+<arguments>
+<arg>X509_USER_PROXY</arg>
+<arg>${proxypath}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.149" level="INFO">Environment variable 'X509_USER_PROXY' set to value '/tmp/storm-testsuite_15183512032015/testersgridproxy'</msg>
+<status status="PASS" endtime="20150312 15:18:46.149" starttime="20150312 15:18:46.149"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:46.150" starttime="20150312 15:18:46.147"></status>
+</kw>
+<kw type="kw" name="setup.Create remote working directory">
+<doc></doc>
+<arguments>
+<arg>${X509AUTH_SA}</arg>
+</arguments>
+<kw type="kw" name="${surl} = stormlib.Build surl">
+<doc></doc>
+<arguments>
+<arg>${storageArea}</arg>
+<arg>${TESTDIR}</arg>
+</arguments>
+<kw type="kw" name="${output} = BuiltIn.Set Variable">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>srm://${srmEndpoint}/srm/managerv2?SFN=/${storageArea}/${relativePath}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.152" level="INFO">${output} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/igi/storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:46.152" starttime="20150312 15:18:46.151"></status>
+</kw>
+<msg timestamp="20150312 15:18:46.152" level="INFO">${surl} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/igi/storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:46.152" starttime="20150312 15:18:46.150"></status>
+</kw>
+<kw type="kw" name="${output} = clientSRM.Perform mkdir using clientSRM">
+<doc></doc>
+<arguments>
+<arg>${surl}</arg>
+</arguments>
+<kw type="kw" name="${output} = clientSRM.Execute clientSRM Command on Surl">
+<doc></doc>
+<arguments>
+<arg>mkdir</arg>
+<arg>${surl}</arg>
+<arg>${options}</arg>
+</arguments>
+<kw type="kw" name="${output}, ${stderr} = stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>clientSRM ${cmd} ${options} -e ${srmEndpoint} -s ${surl}</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.158" level="INFO">Running command 'clientSRM mkdir  -e centos6-devel.cnaf.infn.it:8444 -s srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/igi/storm-testsuite_15183512032015 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:46.188" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:46.188" level="INFO">${output} = ============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:46.188" starttime="20150312 15:18:46.157"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.189" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:46.189" starttime="20150312 15:18:46.189"></status>
+</kw>
+<msg timestamp="20150312 15:18:46.190" level="INFO">${output} = ============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+=================...</msg>
+<msg timestamp="20150312 15:18:46.191" level="INFO">${stderr} = </msg>
+<status status="PASS" endtime="20150312 15:18:46.190" starttime="20150312 15:18:46.156"></status>
+</kw>
+<msg timestamp="20150312 15:18:46.191" level="INFO">${output} = ============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:46.191" starttime="20150312 15:18:46.154"></status>
+</kw>
+<msg timestamp="20150312 15:18:46.191" level="INFO">${output} = ============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:46.191" starttime="20150312 15:18:46.153"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.192" level="INFO">============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+============================================================
+Request status:
+  statusCode="SRM_SUCCESS"(0)
+  explanation="Directory created with success"
+============================================================
+SRM Response:
+============================================================</msg>
+<status status="PASS" endtime="20150312 15:18:46.192" starttime="20150312 15:18:46.191"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:46.192" starttime="20150312 15:18:46.150"></status>
+</kw>
+<kw type="kw" name="credentials.Use proxy">
+<doc></doc>
+<arguments>
+<arg>${TESTVO_SA_PROXY}</arg>
+</arguments>
+<kw type="kw" name="OperatingSystem.File Should Exist">
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<arguments>
+<arg>${proxypath}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.195" html="yes" level="INFO">File '&lt;a href="file:///tmp/storm-testsuite_15183512032015/testvovomsproxy"&gt;/tmp/storm-testsuite_15183512032015/testvovomsproxy&lt;/a&gt;' exists</msg>
+<status status="PASS" endtime="20150312 15:18:46.195" starttime="20150312 15:18:46.194"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Set Environment Variable">
+<doc>Sets an environment variable to a specified value.</doc>
+<arguments>
+<arg>X509_USER_PROXY</arg>
+<arg>${proxypath}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.195" level="INFO">Environment variable 'X509_USER_PROXY' set to value '/tmp/storm-testsuite_15183512032015/testvovomsproxy'</msg>
+<status status="PASS" endtime="20150312 15:18:46.195" starttime="20150312 15:18:46.195"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:46.195" starttime="20150312 15:18:46.192"></status>
+</kw>
+<kw type="kw" name="setup.Create remote working directory">
+<doc></doc>
+<arguments>
+<arg>${TESTVO_SA}</arg>
+</arguments>
+<kw type="kw" name="${surl} = stormlib.Build surl">
+<doc></doc>
+<arguments>
+<arg>${storageArea}</arg>
+<arg>${TESTDIR}</arg>
+</arguments>
+<kw type="kw" name="${output} = BuiltIn.Set Variable">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>srm://${srmEndpoint}/srm/managerv2?SFN=/${storageArea}/${relativePath}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.198" level="INFO">${output} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/test.vo/storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:46.198" starttime="20150312 15:18:46.198"></status>
+</kw>
+<msg timestamp="20150312 15:18:46.199" level="INFO">${surl} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/test.vo/storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:46.199" starttime="20150312 15:18:46.196"></status>
+</kw>
+<kw type="kw" name="${output} = clientSRM.Perform mkdir using clientSRM">
+<doc></doc>
+<arguments>
+<arg>${surl}</arg>
+</arguments>
+<kw type="kw" name="${output} = clientSRM.Execute clientSRM Command on Surl">
+<doc></doc>
+<arguments>
+<arg>mkdir</arg>
+<arg>${surl}</arg>
+<arg>${options}</arg>
+</arguments>
+<kw type="kw" name="${output}, ${stderr} = stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>clientSRM ${cmd} ${options} -e ${srmEndpoint} -s ${surl}</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.203" level="INFO">Running command 'clientSRM mkdir  -e centos6-devel.cnaf.infn.it:8444 -s srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/test.vo/storm-testsuite_15183512032015 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:46.246" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:46.246" level="INFO">${output} = ============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 11
+Poll Flag 0
+================...</msg>
+<status status="PASS" endtime="20150312 15:18:46.245" starttime="20150312 15:18:46.202"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.247" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:46.248" starttime="20150312 15:18:46.247"></status>
+</kw>
+<msg timestamp="20150312 15:18:46.248" level="INFO">${output} = ============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 11
+Poll Flag 0
+================...</msg>
+<msg timestamp="20150312 15:18:46.248" level="INFO">${stderr} = </msg>
+<status status="PASS" endtime="20150312 15:18:46.248" starttime="20150312 15:18:46.201"></status>
+</kw>
+<msg timestamp="20150312 15:18:46.248" level="INFO">${output} = ============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 11
+Poll Flag 0
+================...</msg>
+<status status="PASS" endtime="20150312 15:18:46.248" starttime="20150312 15:18:46.200"></status>
+</kw>
+<msg timestamp="20150312 15:18:46.249" level="INFO">${output} = ============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 11
+Poll Flag 0
+================...</msg>
+<status status="PASS" endtime="20150312 15:18:46.249" starttime="20150312 15:18:46.199"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.249" level="INFO">============================================================
+Sending Mkdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 11
+Poll Flag 0
+============================================================
+Request status:
+  statusCode="SRM_DUPLICATION_ERROR"(11)
+  explanation="Directory specified exists!"
+============================================================
+SRM Response:
+============================================================</msg>
+<status status="PASS" endtime="20150312 15:18:46.249" starttime="20150312 15:18:46.249"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:46.249" starttime="20150312 15:18:46.195"></status>
+</kw>
+<kw type="kw" name="credentials.Clear all credentials">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="credentials.Stop using certificate">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>rm ${usercert}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.253" level="INFO">Running command 'rm $HOME/.globus/usercert.pem 2&gt;&amp;1'</msg>
+<status status="PASS" endtime="20150312 15:18:46.258" starttime="20150312 15:18:46.252"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>rm -f ${userkey}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.260" level="INFO">Running command 'rm -f $HOME/.globus/userkey.pem 2&gt;&amp;1'</msg>
+<status status="PASS" endtime="20150312 15:18:46.265" starttime="20150312 15:18:46.259"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:46.265" starttime="20150312 15:18:46.251"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Set Environment Variable">
+<doc>Sets an environment variable to a specified value.</doc>
+<arguments>
+<arg>X509_USER_PROXY</arg>
+<arg>${DEFAULT_X509_USER_PROXY}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.266" level="INFO">Environment variable 'X509_USER_PROXY' set to value '/tmp/x509up_u500'</msg>
+<status status="PASS" endtime="20150312 15:18:46.266" starttime="20150312 15:18:46.265"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:46.267" starttime="20150312 15:18:46.250"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:46.267" starttime="20150312 15:18:45.860"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Set Global Variable">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${STARTED}</arg>
+<arg>true</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.269" level="INFO">${STARTED} = true</msg>
+<status status="PASS" endtime="20150312 15:18:46.269" starttime="20150312 15:18:46.267"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:46.269" starttime="20150312 15:18:35.797"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${DOTEARDOWN}</arg>
+<arg>true</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.271" level="INFO">${DOTEARDOWN} = true</msg>
+<status status="PASS" endtime="20150312 15:18:46.271" starttime="20150312 15:18:46.269"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:46.271" starttime="20150312 15:18:35.796"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:46.271" starttime="20150312 15:18:35.796"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:46.271" starttime="20150312 15:18:35.790"></status>
+</kw>
+<suite source="/home/vagrant/git/storm-testsuite/tests/srm/regressions/STOR-779.txt" id="s1-s1" name="STOR-779">
+<kw type="setup" name="setup.Setup suite if needed">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="${status}, ${message} = BuiltIn.Run Keyword And Ignore Error">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Variable Should Exist</arg>
+<arg>${STARTED}</arg>
+</arguments>
+<kw type="kw" name="BuiltIn.Variable Should Exist">
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<arguments>
+<arg>${STARTED}</arg>
+</arguments>
+<status status="PASS" endtime="20150312 15:18:46.301" starttime="20150312 15:18:46.300"></status>
+</kw>
+<msg timestamp="20150312 15:18:46.301" level="INFO">${status} = PASS</msg>
+<msg timestamp="20150312 15:18:46.301" level="INFO">${message} = None</msg>
+<status status="PASS" endtime="20150312 15:18:46.301" starttime="20150312 15:18:46.300"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Run Keyword If">
+<doc>Runs the given keyword with the given arguments, if `condition` is true.</doc>
+<arguments>
+<arg>"${status}" == "FAIL"</arg>
+<arg>Do setup</arg>
+</arguments>
+<status status="PASS" endtime="20150312 15:18:46.301" starttime="20150312 15:18:46.301"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:46.301" starttime="20150312 15:18:46.299"></status>
+</kw>
+<test id="s1-s1-t1" name="srmRm properly cleans up ongoing PtPs">
+<kw type="setup" name="credentials.Use certificate and proxy">
+<doc></doc>
+<arguments>
+<arg>test0</arg>
+<arg>${VOMSAUTH_SA_PROXY}</arg>
+</arguments>
+<kw type="kw" name="credentials.Use certificate">
+<doc></doc>
+<arguments>
+<arg>${user}</arg>
+</arguments>
+<kw type="kw" name="OperatingSystem.File Should Exist">
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<arguments>
+<arg>${certsDir}/${cert}.cert.pem</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.306" html="yes" level="INFO">File '&lt;a href="file:///usr/share/igi-test-ca/test0.cert.pem"&gt;/usr/share/igi-test-ca/test0.cert.pem&lt;/a&gt;' exists</msg>
+<status status="PASS" endtime="20150312 15:18:46.306" starttime="20150312 15:18:46.305"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.File Should Exist">
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<arguments>
+<arg>${certsDir}/${cert}.key.pem</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.306" html="yes" level="INFO">File '&lt;a href="file:///usr/share/igi-test-ca/test0.key.pem"&gt;/usr/share/igi-test-ca/test0.key.pem&lt;/a&gt;' exists</msg>
+<status status="PASS" endtime="20150312 15:18:46.306" starttime="20150312 15:18:46.306"></status>
+</kw>
+<kw type="kw" name="credentials.Stop using certificate">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>rm ${usercert}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.309" level="INFO">Running command 'rm $HOME/.globus/usercert.pem 2&gt;&amp;1'</msg>
+<status status="PASS" endtime="20150312 15:18:46.312" starttime="20150312 15:18:46.308"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>rm -f ${userkey}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.315" level="INFO">Running command 'rm -f $HOME/.globus/userkey.pem 2&gt;&amp;1'</msg>
+<status status="PASS" endtime="20150312 15:18:46.319" starttime="20150312 15:18:46.313"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:46.320" starttime="20150312 15:18:46.306"></status>
+</kw>
+<kw type="kw" name="stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>cp ${certsDir}/${cert}.cert.pem %{HOME}/.globus/usercert.pem</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.323" level="INFO">Running command 'cp /usr/share/igi-test-ca/test0.cert.pem /home/vagrant/.globus/usercert.pem 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:46.328" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:46.328" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20150312 15:18:46.328" starttime="20150312 15:18:46.322"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.329" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:46.329" starttime="20150312 15:18:46.328"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:46.329" starttime="20150312 15:18:46.320"></status>
+</kw>
+<kw type="kw" name="stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>cp ${certsDir}/${cert}.key.pem %{HOME}/.globus/userkey.pem</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.337" level="INFO">Running command 'cp /usr/share/igi-test-ca/test0.key.pem /home/vagrant/.globus/userkey.pem 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:46.343" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:46.343" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20150312 15:18:46.343" starttime="20150312 15:18:46.331"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.345" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:46.345" starttime="20150312 15:18:46.344"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:46.346" starttime="20150312 15:18:46.330"></status>
+</kw>
+<kw type="kw" name="stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>chmod 400 %{HOME}/.globus/userkey.pem</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.350" level="INFO">Running command 'chmod 400 /home/vagrant/.globus/userkey.pem 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:46.357" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:46.357" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20150312 15:18:46.357" starttime="20150312 15:18:46.348"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.359" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:46.359" starttime="20150312 15:18:46.358"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:46.360" starttime="20150312 15:18:46.347"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:46.360" starttime="20150312 15:18:46.304"></status>
+</kw>
+<kw type="kw" name="credentials.Use proxy">
+<doc></doc>
+<arguments>
+<arg>${proxypath}</arg>
+</arguments>
+<kw type="kw" name="OperatingSystem.File Should Exist">
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<arguments>
+<arg>${proxypath}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.363" html="yes" level="INFO">File '&lt;a href="file:///tmp/storm-testsuite_15183512032015/testersvomsproxy"&gt;/tmp/storm-testsuite_15183512032015/testersvomsproxy&lt;/a&gt;' exists</msg>
+<status status="PASS" endtime="20150312 15:18:46.363" starttime="20150312 15:18:46.362"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Set Environment Variable">
+<doc>Sets an environment variable to a specified value.</doc>
+<arguments>
+<arg>X509_USER_PROXY</arg>
+<arg>${proxypath}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.363" level="INFO">Environment variable 'X509_USER_PROXY' set to value '/tmp/storm-testsuite_15183512032015/testersvomsproxy'</msg>
+<status status="PASS" endtime="20150312 15:18:46.363" starttime="20150312 15:18:46.363"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:46.364" starttime="20150312 15:18:46.360"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:46.364" starttime="20150312 15:18:46.303"></status>
+</kw>
+<kw type="kw" name="${filename} = stormlib.Get a unique name">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="${name}, ${stderr} = stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>basename `mktemp`</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.368" level="INFO">Running command 'basename `mktemp` 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:46.372" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:46.372" level="INFO">${output} = tmp.7lmQ3QUEoX</msg>
+<status status="PASS" endtime="20150312 15:18:46.372" starttime="20150312 15:18:46.367"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.374" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:46.374" starttime="20150312 15:18:46.373"></status>
+</kw>
+<msg timestamp="20150312 15:18:46.375" level="INFO">${name} = tmp.7lmQ3QUEoX</msg>
+<msg timestamp="20150312 15:18:46.375" level="INFO">${stderr} = </msg>
+<status status="PASS" endtime="20150312 15:18:46.375" starttime="20150312 15:18:46.366"></status>
+</kw>
+<kw type="kw" name="stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>rm -f /tmp/${name}</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.378" level="INFO">Running command 'rm -f /tmp/tmp.7lmQ3QUEoX 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:46.381" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:46.381" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20150312 15:18:46.381" starttime="20150312 15:18:46.376"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.383" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:46.383" starttime="20150312 15:18:46.382"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:46.383" starttime="20150312 15:18:46.375"></status>
+</kw>
+<msg timestamp="20150312 15:18:46.384" level="INFO">${filename} = tmp.7lmQ3QUEoX</msg>
+<status status="PASS" endtime="20150312 15:18:46.384" starttime="20150312 15:18:46.365"></status>
+</kw>
+<kw type="kw" name="${surl} = stormlib.Build surl">
+<doc></doc>
+<arguments>
+<arg>${VOMSAUTH_SA}</arg>
+<arg>${TESTDIR}/${filename}</arg>
+</arguments>
+<kw type="kw" name="${output} = BuiltIn.Set Variable">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>srm://${srmEndpoint}/srm/managerv2?SFN=/${storageArea}/${relativePath}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.386" level="INFO">${output} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/test.vo/storm-testsuite_15183512032015/tmp.7lmQ3QUEoX</msg>
+<status status="PASS" endtime="20150312 15:18:46.386" starttime="20150312 15:18:46.386"></status>
+</kw>
+<msg timestamp="20150312 15:18:46.386" level="INFO">${surl} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/test.vo/storm-testsuite_15183512032015/tmp.7lmQ3QUEoX</msg>
+<status status="PASS" endtime="20150312 15:18:46.386" starttime="20150312 15:18:46.384"></status>
+</kw>
+<kw type="kw" name="${output}, ${token} = clientSRM.Perform ptp using clientSRM">
+<doc></doc>
+<arguments>
+<arg>${surl}</arg>
+<arg>-p</arg>
+</arguments>
+<kw type="kw" name="${output} = clientSRM.Execute clientSRM Command on Surl">
+<doc></doc>
+<arguments>
+<arg>ptp</arg>
+<arg>${surl}</arg>
+<arg>${options}</arg>
+</arguments>
+<kw type="kw" name="${output}, ${stderr} = stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>clientSRM ${cmd} ${options} -e ${srmEndpoint} -s ${surl}</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:46.391" level="INFO">Running command 'clientSRM ptp -p -e centos6-devel.cnaf.infn.it:8444 -s srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/test.vo/storm-testsuite_15183512032015/tmp.7lmQ3QUEoX 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:47.461" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:47.461" level="INFO">${output} = ============================================================
+Sending PtP request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 17
+Poll Flag 1
+==================...</msg>
+<status status="PASS" endtime="20150312 15:18:47.461" starttime="20150312 15:18:46.390"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:47.463" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:47.463" starttime="20150312 15:18:47.462"></status>
+</kw>
+<msg timestamp="20150312 15:18:47.463" level="INFO">${output} = ============================================================
+Sending PtP request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 17
+Poll Flag 1
+==================...</msg>
+<msg timestamp="20150312 15:18:47.463" level="INFO">${stderr} = </msg>
+<status status="PASS" endtime="20150312 15:18:47.463" starttime="20150312 15:18:46.389"></status>
+</kw>
+<msg timestamp="20150312 15:18:47.464" level="INFO">${output} = ============================================================
+Sending PtP request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 17
+Poll Flag 1
+==================...</msg>
+<status status="PASS" endtime="20150312 15:18:47.464" starttime="20150312 15:18:46.388"></status>
+</kw>
+<kw type="kw" name="${result}, ${token} = BuiltIn.Should Match Regexp">
+<doc>Fails if `string` does not match `pattern` as a regular expression.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>requestToken=(\".+\")</arg>
+</arguments>
+<msg timestamp="20150312 15:18:47.465" level="INFO">${result} = requestToken="7aee5229-4fbf-4d53-9a1b-781e1796a442"</msg>
+<msg timestamp="20150312 15:18:47.465" level="INFO">${token} = "7aee5229-4fbf-4d53-9a1b-781e1796a442"</msg>
+<status status="PASS" endtime="20150312 15:18:47.465" starttime="20150312 15:18:47.464"></status>
+</kw>
+<msg timestamp="20150312 15:18:47.465" level="INFO">${output} = ============================================================
+Sending PtP request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 17
+Poll Flag 1
+==================...</msg>
+<msg timestamp="20150312 15:18:47.466" level="INFO">${token} = "7aee5229-4fbf-4d53-9a1b-781e1796a442"</msg>
+<status status="PASS" endtime="20150312 15:18:47.465" starttime="20150312 15:18:46.387"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Not Contain">
+<doc>Fails if `item1` contains `item2` one or more times.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>SRM_FAILURE</arg>
+</arguments>
+<status status="PASS" endtime="20150312 15:18:47.466" starttime="20150312 15:18:47.466"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Contain">
+<doc>Fails if `item1` does not contain `item2` one or more times.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>SRM_SPACE_AVAILABLE</arg>
+</arguments>
+<status status="PASS" endtime="20150312 15:18:47.467" starttime="20150312 15:18:47.466"></status>
+</kw>
+<kw type="kw" name="${output} = clientSRM.Perform rm using clientSRM">
+<doc></doc>
+<arguments>
+<arg>${surl}</arg>
+</arguments>
+<kw type="kw" name="${output} = clientSRM.Execute clientSRM Command on Surl">
+<doc></doc>
+<arguments>
+<arg>rm</arg>
+<arg>${surl}</arg>
+<arg>${options}</arg>
+</arguments>
+<kw type="kw" name="${output}, ${stderr} = stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>clientSRM ${cmd} ${options} -e ${srmEndpoint} -s ${surl}</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:47.472" level="INFO">Running command 'clientSRM rm  -e centos6-devel.cnaf.infn.it:8444 -s srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/test.vo/storm-testsuite_15183512032015/tmp.7lmQ3QUEoX 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:47.513" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:47.514" level="INFO">${output} = ============================================================
+Sending Rm request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+====================...</msg>
+<status status="PASS" endtime="20150312 15:18:47.512" starttime="20150312 15:18:47.471"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:47.516" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:47.516" starttime="20150312 15:18:47.515"></status>
+</kw>
+<msg timestamp="20150312 15:18:47.516" level="INFO">${output} = ============================================================
+Sending Rm request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+====================...</msg>
+<msg timestamp="20150312 15:18:47.517" level="INFO">${stderr} = </msg>
+<status status="PASS" endtime="20150312 15:18:47.516" starttime="20150312 15:18:47.470"></status>
+</kw>
+<msg timestamp="20150312 15:18:47.518" level="INFO">${output} = ============================================================
+Sending Rm request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+====================...</msg>
+<status status="PASS" endtime="20150312 15:18:47.518" starttime="20150312 15:18:47.469"></status>
+</kw>
+<msg timestamp="20150312 15:18:47.519" level="INFO">${output} = ============================================================
+Sending Rm request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+====================...</msg>
+<status status="PASS" endtime="20150312 15:18:47.519" starttime="20150312 15:18:47.467"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Contain">
+<doc>Fails if `item1` does not contain `item2` one or more times.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>SRM_SUCCESS</arg>
+</arguments>
+<status status="PASS" endtime="20150312 15:18:47.520" starttime="20150312 15:18:47.519"></status>
+</kw>
+<kw type="kw" name="${output}, ${token} = clientSRM.Perform ptp using clientSRM">
+<doc></doc>
+<arguments>
+<arg>${surl}</arg>
+<arg>-p</arg>
+</arguments>
+<kw type="kw" name="${output} = clientSRM.Execute clientSRM Command on Surl">
+<doc></doc>
+<arguments>
+<arg>ptp</arg>
+<arg>${surl}</arg>
+<arg>${options}</arg>
+</arguments>
+<kw type="kw" name="${output}, ${stderr} = stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>clientSRM ${cmd} ${options} -e ${srmEndpoint} -s ${surl}</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:47.527" level="INFO">Running command 'clientSRM ptp -p -e centos6-devel.cnaf.infn.it:8444 -s srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/test.vo/storm-testsuite_15183512032015/tmp.7lmQ3QUEoX 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:49.620" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:49.620" level="INFO">${output} = ============================================================
+Sending PtP request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 17
+Poll Flag 1
+==================...</msg>
+<status status="PASS" endtime="20150312 15:18:49.619" starttime="20150312 15:18:47.524"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.621" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:49.622" starttime="20150312 15:18:49.621"></status>
+</kw>
+<msg timestamp="20150312 15:18:49.622" level="INFO">${output} = ============================================================
+Sending PtP request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 17
+Poll Flag 1
+==================...</msg>
+<msg timestamp="20150312 15:18:49.622" level="INFO">${stderr} = </msg>
+<status status="PASS" endtime="20150312 15:18:49.622" starttime="20150312 15:18:47.523"></status>
+</kw>
+<msg timestamp="20150312 15:18:49.622" level="INFO">${output} = ============================================================
+Sending PtP request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 17
+Poll Flag 1
+==================...</msg>
+<status status="PASS" endtime="20150312 15:18:49.622" starttime="20150312 15:18:47.522"></status>
+</kw>
+<kw type="kw" name="${result}, ${token} = BuiltIn.Should Match Regexp">
+<doc>Fails if `string` does not match `pattern` as a regular expression.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>requestToken=(\".+\")</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.623" level="INFO">${result} = requestToken="8447ca3e-afba-4d30-970d-779b8ecfabd9"</msg>
+<msg timestamp="20150312 15:18:49.623" level="INFO">${token} = "8447ca3e-afba-4d30-970d-779b8ecfabd9"</msg>
+<status status="PASS" endtime="20150312 15:18:49.623" starttime="20150312 15:18:49.623"></status>
+</kw>
+<msg timestamp="20150312 15:18:49.624" level="INFO">${output} = ============================================================
+Sending PtP request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 17
+Poll Flag 1
+==================...</msg>
+<msg timestamp="20150312 15:18:49.624" level="INFO">${token} = "8447ca3e-afba-4d30-970d-779b8ecfabd9"</msg>
+<status status="PASS" endtime="20150312 15:18:49.624" starttime="20150312 15:18:47.520"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Not Contain">
+<doc>Fails if `item1` contains `item2` one or more times.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>SRM_FAILURE</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.625" level="FAIL">'============================================================
+Sending PtP request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 17
+Poll Flag 1
+============================================================
+Polling request status:
+Current status: SRM_REQUEST_QUEUED (Ctrl+c to stop polling)..
+============================================================
+Request status:
+  statusCode="SRM_FAILURE"(1)
+  explanation="All chunks failed!"
+============================================================
+SRM Response:
+  requestToken="8447ca3e-afba-4d30-970d-779b8ecfabd9"
+  arrayOfFileStatuses (size=1)
+      [0] SURL="srm://centos6-devel.cnaf.infn.it:8444/test.vo/storm-testsuite_15183512032015/tmp.7lmQ3QUEoX"
+      [0] status: statusCode="SRM_FILE_BUSY"(30)
+                  explanation="The surl srm://centos6-devel.cnaf.infn.it:8444/test.vo/storm-testsuite_15183512032015/tmp.7lmQ3QUEoX is currently busy (ongoing put requests)"
+============================================================' contains 'SRM_FAILURE'</msg>
+<status status="FAIL" endtime="20150312 15:18:49.625" starttime="20150312 15:18:49.624"></status>
+</kw>
+<kw type="teardown" name="credentials.Clear all credentials">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="credentials.Stop using certificate">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>rm ${usercert}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.633" level="INFO">Running command 'rm $HOME/.globus/usercert.pem 2&gt;&amp;1'</msg>
+<status status="PASS" endtime="20150312 15:18:49.637" starttime="20150312 15:18:49.631"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>rm -f ${userkey}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.642" level="INFO">Running command 'rm -f $HOME/.globus/userkey.pem 2&gt;&amp;1'</msg>
+<status status="PASS" endtime="20150312 15:18:49.646" starttime="20150312 15:18:49.640"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:49.647" starttime="20150312 15:18:49.629"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Set Environment Variable">
+<doc>Sets an environment variable to a specified value.</doc>
+<arguments>
+<arg>X509_USER_PROXY</arg>
+<arg>${DEFAULT_X509_USER_PROXY}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.648" level="INFO">Environment variable 'X509_USER_PROXY' set to value '/tmp/x509up_u500'</msg>
+<status status="PASS" endtime="20150312 15:18:49.648" starttime="20150312 15:18:49.647"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:49.648" starttime="20150312 15:18:49.626"></status>
+</kw>
+<doc></doc>
+<tags>
+<tag>ptp</tag>
+<tag>rm</tag>
+<tag>STOR-779</tag>
+<tag>storm-client</tag>
+</tags>
+<status status="FAIL" endtime="20150312 15:18:49.648" critical="yes" starttime="20150312 15:18:46.302">'============================================================
+Sending PtP request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 17
+Poll Flag 1
+============================================================
+Polling request status:
+Current status: SRM_REQUEST_QUEUED (Ctrl+c to stop polling)..
+============================================================
+Request status:
+  statusCode="SRM_FAILURE"(1)
+  explanation="All chunks failed!"
+============================================================
+SRM Response:
+  requestToken="8447ca3e-afba-4d30-970d-779b8ecfabd9"
+  arrayOfFileStatuses (size=1)
+      [0] SURL="srm://centos6-devel.cnaf.infn.it:8444/test.vo/storm-testsuite_15183512032015/tmp.7lmQ3QUEoX"
+      [0] status: statusCode="SRM_FILE_BUSY"(30)
+                  explanation="The surl srm://centos6-devel.cnaf.infn.it:8444/test.vo/storm-testsuite_15183512032015/tmp.7lmQ3QUEoX is currently busy (ongoing put requests)"
+============================================================' contains 'SRM_FAILURE'</status>
+</test>
+<kw type="teardown" name="setup.Teardown suite if needed">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="${status}, ${message} = BuiltIn.Run Keyword And Ignore Error">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Variable Should Exist</arg>
+<arg>${DOTEARDOWN}</arg>
+</arguments>
+<kw type="kw" name="BuiltIn.Variable Should Exist">
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<arguments>
+<arg>${DOTEARDOWN}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.655" level="FAIL">Variable ${DOTEARDOWN} does not exist.</msg>
+<status status="FAIL" endtime="20150312 15:18:49.655" starttime="20150312 15:18:49.652"></status>
+</kw>
+<msg timestamp="20150312 15:18:49.655" level="INFO">${status} = FAIL</msg>
+<msg timestamp="20150312 15:18:49.655" level="INFO">${message} = Variable ${DOTEARDOWN} does not exist.</msg>
+<status status="PASS" endtime="20150312 15:18:49.655" starttime="20150312 15:18:49.651"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Run Keyword If">
+<doc>Runs the given keyword with the given arguments, if `condition` is true.</doc>
+<arguments>
+<arg>"${status}" == "PASS"</arg>
+<arg>Teardown suite</arg>
+</arguments>
+<status status="PASS" endtime="20150312 15:18:49.656" starttime="20150312 15:18:49.655"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:49.656" starttime="20150312 15:18:49.650"></status>
+</kw>
+<doc></doc>
+<metadata>
+</metadata>
+<status status="FAIL" endtime="20150312 15:18:49.656" starttime="20150312 15:18:46.272"></status>
+</suite>
+<kw type="teardown" name="setup.Teardown suite if needed">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="${status}, ${message} = BuiltIn.Run Keyword And Ignore Error">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Variable Should Exist</arg>
+<arg>${DOTEARDOWN}</arg>
+</arguments>
+<kw type="kw" name="BuiltIn.Variable Should Exist">
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<arguments>
+<arg>${DOTEARDOWN}</arg>
+</arguments>
+<status status="PASS" endtime="20150312 15:18:49.660" starttime="20150312 15:18:49.660"></status>
+</kw>
+<msg timestamp="20150312 15:18:49.660" level="INFO">${status} = PASS</msg>
+<msg timestamp="20150312 15:18:49.661" level="INFO">${message} = None</msg>
+<status status="PASS" endtime="20150312 15:18:49.660" starttime="20150312 15:18:49.660"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Run Keyword If">
+<doc>Runs the given keyword with the given arguments, if `condition` is true.</doc>
+<arguments>
+<arg>"${status}" == "PASS"</arg>
+<arg>Teardown suite</arg>
+</arguments>
+<kw type="kw" name="setup.Teardown suite">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="setup.Clear all directories">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="credentials.Clear all credentials">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="credentials.Stop using certificate">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>rm ${usercert}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.667" level="INFO">Running command 'rm $HOME/.globus/usercert.pem 2&gt;&amp;1'</msg>
+<status status="PASS" endtime="20150312 15:18:49.671" starttime="20150312 15:18:49.665"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>rm -f ${userkey}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.677" level="INFO">Running command 'rm -f $HOME/.globus/userkey.pem 2&gt;&amp;1'</msg>
+<status status="PASS" endtime="20150312 15:18:49.683" starttime="20150312 15:18:49.672"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:49.684" starttime="20150312 15:18:49.664"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Set Environment Variable">
+<doc>Sets an environment variable to a specified value.</doc>
+<arguments>
+<arg>X509_USER_PROXY</arg>
+<arg>${DEFAULT_X509_USER_PROXY}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.685" level="INFO">Environment variable 'X509_USER_PROXY' set to value '/tmp/x509up_u500'</msg>
+<status status="PASS" endtime="20150312 15:18:49.685" starttime="20150312 15:18:49.684"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:49.685" starttime="20150312 15:18:49.663"></status>
+</kw>
+<kw type="kw" name="credentials.Use certificate">
+<doc></doc>
+<arguments>
+<arg>test0</arg>
+</arguments>
+<kw type="kw" name="OperatingSystem.File Should Exist">
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<arguments>
+<arg>${certsDir}/${cert}.cert.pem</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.687" html="yes" level="INFO">File '&lt;a href="file:///usr/share/igi-test-ca/test0.cert.pem"&gt;/usr/share/igi-test-ca/test0.cert.pem&lt;/a&gt;' exists</msg>
+<status status="PASS" endtime="20150312 15:18:49.687" starttime="20150312 15:18:49.687"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.File Should Exist">
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<arguments>
+<arg>${certsDir}/${cert}.key.pem</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.688" html="yes" level="INFO">File '&lt;a href="file:///usr/share/igi-test-ca/test0.key.pem"&gt;/usr/share/igi-test-ca/test0.key.pem&lt;/a&gt;' exists</msg>
+<status status="PASS" endtime="20150312 15:18:49.688" starttime="20150312 15:18:49.687"></status>
+</kw>
+<kw type="kw" name="credentials.Stop using certificate">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>rm ${usercert}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.690" level="INFO">Running command 'rm $HOME/.globus/usercert.pem 2&gt;&amp;1'</msg>
+<status status="PASS" endtime="20150312 15:18:49.694" starttime="20150312 15:18:49.689"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>rm -f ${userkey}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.696" level="INFO">Running command 'rm -f $HOME/.globus/userkey.pem 2&gt;&amp;1'</msg>
+<status status="PASS" endtime="20150312 15:18:49.700" starttime="20150312 15:18:49.694"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:49.700" starttime="20150312 15:18:49.688"></status>
+</kw>
+<kw type="kw" name="stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>cp ${certsDir}/${cert}.cert.pem %{HOME}/.globus/usercert.pem</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.703" level="INFO">Running command 'cp /usr/share/igi-test-ca/test0.cert.pem /home/vagrant/.globus/usercert.pem 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:49.707" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:49.707" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20150312 15:18:49.707" starttime="20150312 15:18:49.702"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.709" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:49.709" starttime="20150312 15:18:49.708"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:49.709" starttime="20150312 15:18:49.701"></status>
+</kw>
+<kw type="kw" name="stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>cp ${certsDir}/${cert}.key.pem %{HOME}/.globus/userkey.pem</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.712" level="INFO">Running command 'cp /usr/share/igi-test-ca/test0.key.pem /home/vagrant/.globus/userkey.pem 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:49.717" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:49.717" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20150312 15:18:49.716" starttime="20150312 15:18:49.711"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.719" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:49.719" starttime="20150312 15:18:49.718"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:49.720" starttime="20150312 15:18:49.709"></status>
+</kw>
+<kw type="kw" name="stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>chmod 400 %{HOME}/.globus/userkey.pem</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.723" level="INFO">Running command 'chmod 400 /home/vagrant/.globus/userkey.pem 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:49.727" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:49.727" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20150312 15:18:49.726" starttime="20150312 15:18:49.721"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.728" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:49.729" starttime="20150312 15:18:49.728"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:49.729" starttime="20150312 15:18:49.720"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:49.729" starttime="20150312 15:18:49.685"></status>
+</kw>
+<kw type="kw" name="credentials.Use proxy">
+<doc></doc>
+<arguments>
+<arg>${VOMSAUTH_SA_PROXY}</arg>
+</arguments>
+<kw type="kw" name="OperatingSystem.File Should Exist">
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<arguments>
+<arg>${proxypath}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.731" html="yes" level="INFO">File '&lt;a href="file:///tmp/storm-testsuite_15183512032015/testersvomsproxy"&gt;/tmp/storm-testsuite_15183512032015/testersvomsproxy&lt;/a&gt;' exists</msg>
+<status status="PASS" endtime="20150312 15:18:49.731" starttime="20150312 15:18:49.730"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Set Environment Variable">
+<doc>Sets an environment variable to a specified value.</doc>
+<arguments>
+<arg>X509_USER_PROXY</arg>
+<arg>${proxypath}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.731" level="INFO">Environment variable 'X509_USER_PROXY' set to value '/tmp/storm-testsuite_15183512032015/testersvomsproxy'</msg>
+<status status="PASS" endtime="20150312 15:18:49.731" starttime="20150312 15:18:49.731"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:49.731" starttime="20150312 15:18:49.729"></status>
+</kw>
+<kw type="kw" name="setup.Clear remote working directory">
+<doc></doc>
+<arguments>
+<arg>${VOMSAUTH_SA}</arg>
+</arguments>
+<kw type="kw" name="${surl} = stormlib.Build surl">
+<doc></doc>
+<arguments>
+<arg>${storageArea}</arg>
+<arg>${TESTDIR}</arg>
+</arguments>
+<kw type="kw" name="${output} = BuiltIn.Set Variable">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>srm://${srmEndpoint}/srm/managerv2?SFN=/${storageArea}/${relativePath}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.735" level="INFO">${output} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/test.vo/storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:49.735" starttime="20150312 15:18:49.734"></status>
+</kw>
+<msg timestamp="20150312 15:18:49.735" level="INFO">${surl} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/test.vo/storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:49.735" starttime="20150312 15:18:49.733"></status>
+</kw>
+<kw type="kw" name="${output} = clientSRM.Perform rmdir using clientSRM">
+<doc></doc>
+<arguments>
+<arg>${surl}</arg>
+<arg>-r</arg>
+</arguments>
+<kw type="kw" name="${output} = clientSRM.Execute clientSRM Command on Surl">
+<doc></doc>
+<arguments>
+<arg>rmdir</arg>
+<arg>${surl}</arg>
+<arg>${options}</arg>
+</arguments>
+<kw type="kw" name="${output}, ${stderr} = stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>clientSRM ${cmd} ${options} -e ${srmEndpoint} -s ${surl}</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.743" level="INFO">Running command 'clientSRM rmdir -r -e centos6-devel.cnaf.infn.it:8444 -s srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/test.vo/storm-testsuite_15183512032015 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:49.783" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:49.783" level="INFO">${output} = ============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:49.782" starttime="20150312 15:18:49.741"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.785" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:49.785" starttime="20150312 15:18:49.784"></status>
+</kw>
+<msg timestamp="20150312 15:18:49.786" level="INFO">${output} = ============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+=================...</msg>
+<msg timestamp="20150312 15:18:49.786" level="INFO">${stderr} = </msg>
+<status status="PASS" endtime="20150312 15:18:49.786" starttime="20150312 15:18:49.739"></status>
+</kw>
+<msg timestamp="20150312 15:18:49.786" level="INFO">${output} = ============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:49.786" starttime="20150312 15:18:49.736"></status>
+</kw>
+<msg timestamp="20150312 15:18:49.787" level="INFO">${output} = ============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:49.787" starttime="20150312 15:18:49.735"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.787" level="INFO">============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+============================================================
+Request status:
+  statusCode="SRM_SUCCESS"(0)
+  explanation="Directory removed with success!"
+============================================================
+SRM Response:
+============================================================</msg>
+<status status="PASS" endtime="20150312 15:18:49.787" starttime="20150312 15:18:49.787"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:49.787" starttime="20150312 15:18:49.732"></status>
+</kw>
+<kw type="kw" name="setup.Clear remote working directory">
+<doc></doc>
+<arguments>
+<arg>${TESTVO_SA}</arg>
+</arguments>
+<kw type="kw" name="${surl} = stormlib.Build surl">
+<doc></doc>
+<arguments>
+<arg>${storageArea}</arg>
+<arg>${TESTDIR}</arg>
+</arguments>
+<kw type="kw" name="${output} = BuiltIn.Set Variable">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>srm://${srmEndpoint}/srm/managerv2?SFN=/${storageArea}/${relativePath}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.791" level="INFO">${output} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/test.vo/storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:49.791" starttime="20150312 15:18:49.791"></status>
+</kw>
+<msg timestamp="20150312 15:18:49.792" level="INFO">${surl} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/test.vo/storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:49.792" starttime="20150312 15:18:49.790"></status>
+</kw>
+<kw type="kw" name="${output} = clientSRM.Perform rmdir using clientSRM">
+<doc></doc>
+<arguments>
+<arg>${surl}</arg>
+<arg>-r</arg>
+</arguments>
+<kw type="kw" name="${output} = clientSRM.Execute clientSRM Command on Surl">
+<doc></doc>
+<arguments>
+<arg>rmdir</arg>
+<arg>${surl}</arg>
+<arg>${options}</arg>
+</arguments>
+<kw type="kw" name="${output}, ${stderr} = stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>clientSRM ${cmd} ${options} -e ${srmEndpoint} -s ${surl}</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.797" level="INFO">Running command 'clientSRM rmdir -r -e centos6-devel.cnaf.infn.it:8444 -s srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/test.vo/storm-testsuite_15183512032015 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:49.843" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:49.843" level="INFO">${output} = ============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 5
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:49.842" starttime="20150312 15:18:49.795"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.844" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:49.844" starttime="20150312 15:18:49.844"></status>
+</kw>
+<msg timestamp="20150312 15:18:49.845" level="INFO">${output} = ============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 5
+Poll Flag 0
+=================...</msg>
+<msg timestamp="20150312 15:18:49.845" level="INFO">${stderr} = </msg>
+<status status="PASS" endtime="20150312 15:18:49.845" starttime="20150312 15:18:49.794"></status>
+</kw>
+<msg timestamp="20150312 15:18:49.845" level="INFO">${output} = ============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 5
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:49.845" starttime="20150312 15:18:49.793"></status>
+</kw>
+<msg timestamp="20150312 15:18:49.846" level="INFO">${output} = ============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 5
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:49.846" starttime="20150312 15:18:49.792"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.846" level="INFO">============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 5
+Poll Flag 0
+============================================================
+Request status:
+  statusCode="SRM_INVALID_PATH"(5)
+  explanation="Directory does not exists"
+============================================================
+SRM Response:
+============================================================</msg>
+<status status="PASS" endtime="20150312 15:18:49.846" starttime="20150312 15:18:49.846"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:49.847" starttime="20150312 15:18:49.788"></status>
+</kw>
+<kw type="kw" name="setup.Clear remote working directory">
+<doc></doc>
+<arguments>
+<arg>${ANONYMOUS_SA}</arg>
+</arguments>
+<kw type="kw" name="${surl} = stormlib.Build surl">
+<doc></doc>
+<arguments>
+<arg>${storageArea}</arg>
+<arg>${TESTDIR}</arg>
+</arguments>
+<kw type="kw" name="${output} = BuiltIn.Set Variable">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>srm://${srmEndpoint}/srm/managerv2?SFN=/${storageArea}/${relativePath}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.850" level="INFO">${output} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/noauth/storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:49.850" starttime="20150312 15:18:49.849"></status>
+</kw>
+<msg timestamp="20150312 15:18:49.850" level="INFO">${surl} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/noauth/storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:49.850" starttime="20150312 15:18:49.848"></status>
+</kw>
+<kw type="kw" name="${output} = clientSRM.Perform rmdir using clientSRM">
+<doc></doc>
+<arguments>
+<arg>${surl}</arg>
+<arg>-r</arg>
+</arguments>
+<kw type="kw" name="${output} = clientSRM.Execute clientSRM Command on Surl">
+<doc></doc>
+<arguments>
+<arg>rmdir</arg>
+<arg>${surl}</arg>
+<arg>${options}</arg>
+</arguments>
+<kw type="kw" name="${output}, ${stderr} = stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>clientSRM ${cmd} ${options} -e ${srmEndpoint} -s ${surl}</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.856" level="INFO">Running command 'clientSRM rmdir -r -e centos6-devel.cnaf.infn.it:8444 -s srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/noauth/storm-testsuite_15183512032015 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:49.894" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:49.894" level="INFO">${output} = ============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:49.894" starttime="20150312 15:18:49.854"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.897" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:49.897" starttime="20150312 15:18:49.895"></status>
+</kw>
+<msg timestamp="20150312 15:18:49.897" level="INFO">${output} = ============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+=================...</msg>
+<msg timestamp="20150312 15:18:49.897" level="INFO">${stderr} = </msg>
+<status status="PASS" endtime="20150312 15:18:49.897" starttime="20150312 15:18:49.853"></status>
+</kw>
+<msg timestamp="20150312 15:18:49.898" level="INFO">${output} = ============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:49.898" starttime="20150312 15:18:49.852"></status>
+</kw>
+<msg timestamp="20150312 15:18:49.898" level="INFO">${output} = ============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:49.898" starttime="20150312 15:18:49.850"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.899" level="INFO">============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+============================================================
+Request status:
+  statusCode="SRM_SUCCESS"(0)
+  explanation="Directory removed with success!"
+============================================================
+SRM Response:
+============================================================</msg>
+<status status="PASS" endtime="20150312 15:18:49.899" starttime="20150312 15:18:49.898"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:49.899" starttime="20150312 15:18:49.847"></status>
+</kw>
+<kw type="kw" name="setup.Clear remote working directory">
+<doc></doc>
+<arguments>
+<arg>${NESTED_SA}</arg>
+</arguments>
+<kw type="kw" name="${surl} = stormlib.Build surl">
+<doc></doc>
+<arguments>
+<arg>${storageArea}</arg>
+<arg>${TESTDIR}</arg>
+</arguments>
+<kw type="kw" name="${output} = BuiltIn.Set Variable">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>srm://${srmEndpoint}/srm/managerv2?SFN=/${storageArea}/${relativePath}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.902" level="INFO">${output} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/testers.eu-emi.eu/nested/storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:49.902" starttime="20150312 15:18:49.901"></status>
+</kw>
+<msg timestamp="20150312 15:18:49.902" level="INFO">${surl} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/testers.eu-emi.eu/nested/storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:49.902" starttime="20150312 15:18:49.900"></status>
+</kw>
+<kw type="kw" name="${output} = clientSRM.Perform rmdir using clientSRM">
+<doc></doc>
+<arguments>
+<arg>${surl}</arg>
+<arg>-r</arg>
+</arguments>
+<kw type="kw" name="${output} = clientSRM.Execute clientSRM Command on Surl">
+<doc></doc>
+<arguments>
+<arg>rmdir</arg>
+<arg>${surl}</arg>
+<arg>${options}</arg>
+</arguments>
+<kw type="kw" name="${output}, ${stderr} = stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>clientSRM ${cmd} ${options} -e ${srmEndpoint} -s ${surl}</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.908" level="INFO">Running command 'clientSRM rmdir -r -e centos6-devel.cnaf.infn.it:8444 -s srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/testers.eu-emi.eu/nested/storm-testsuite_15183512032015 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:49.950" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:49.950" level="INFO">${output} = ============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 3
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:49.950" starttime="20150312 15:18:49.906"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.951" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:49.952" starttime="20150312 15:18:49.951"></status>
+</kw>
+<msg timestamp="20150312 15:18:49.952" level="INFO">${output} = ============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 3
+Poll Flag 0
+=================...</msg>
+<msg timestamp="20150312 15:18:49.952" level="INFO">${stderr} = </msg>
+<status status="PASS" endtime="20150312 15:18:49.952" starttime="20150312 15:18:49.905"></status>
+</kw>
+<msg timestamp="20150312 15:18:49.953" level="INFO">${output} = ============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 3
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:49.953" starttime="20150312 15:18:49.904"></status>
+</kw>
+<msg timestamp="20150312 15:18:49.953" level="INFO">${output} = ============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 3
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:49.953" starttime="20150312 15:18:49.902"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.954" level="INFO">============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 3
+Poll Flag 0
+============================================================
+Request status:
+  statusCode="SRM_AUTHORIZATION_FAILURE"(3)
+  explanation="User 'Grid User (VOMS) =  DN:'C=IT, O=IGI, CN=test0' FQANS:[/test.vo/Role=NULL/Capability=NULL, /test.vo/G1/Role=NULL/Capability=NULL, /test.vo/G2/Role=NULL/Capability=NULL, /test.vo/G2/G3/Role=NULL/Capability=NULL]' is not authorized to access 'srm://cen"
+============================================================
+SRM Response:
+============================================================</msg>
+<status status="PASS" endtime="20150312 15:18:49.954" starttime="20150312 15:18:49.954"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:49.954" starttime="20150312 15:18:49.900"></status>
+</kw>
+<kw type="kw" name="setup.Clear remote working directory">
+<doc></doc>
+<arguments>
+<arg>${TAPE_SA}</arg>
+</arguments>
+<kw type="kw" name="${surl} = stormlib.Build surl">
+<doc></doc>
+<arguments>
+<arg>${storageArea}</arg>
+<arg>${TESTDIR}</arg>
+</arguments>
+<kw type="kw" name="${output} = BuiltIn.Set Variable">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>srm://${srmEndpoint}/srm/managerv2?SFN=/${storageArea}/${relativePath}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.959" level="INFO">${output} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/tape/storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:49.959" starttime="20150312 15:18:49.957"></status>
+</kw>
+<msg timestamp="20150312 15:18:49.959" level="INFO">${surl} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/tape/storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:49.959" starttime="20150312 15:18:49.956"></status>
+</kw>
+<kw type="kw" name="${output} = clientSRM.Perform rmdir using clientSRM">
+<doc></doc>
+<arguments>
+<arg>${surl}</arg>
+<arg>-r</arg>
+</arguments>
+<kw type="kw" name="${output} = clientSRM.Execute clientSRM Command on Surl">
+<doc></doc>
+<arguments>
+<arg>rmdir</arg>
+<arg>${surl}</arg>
+<arg>${options}</arg>
+</arguments>
+<kw type="kw" name="${output}, ${stderr} = stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>clientSRM ${cmd} ${options} -e ${srmEndpoint} -s ${surl}</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.964" level="INFO">Running command 'clientSRM rmdir -r -e centos6-devel.cnaf.infn.it:8444 -s srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/tape/storm-testsuite_15183512032015 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:49.997" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:49.998" level="INFO">${output} = ============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 3
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:49.997" starttime="20150312 15:18:49.963"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:49.999" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:49.999" starttime="20150312 15:18:49.998"></status>
+</kw>
+<msg timestamp="20150312 15:18:49.999" level="INFO">${output} = ============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 3
+Poll Flag 0
+=================...</msg>
+<msg timestamp="20150312 15:18:49.999" level="INFO">${stderr} = </msg>
+<status status="PASS" endtime="20150312 15:18:49.999" starttime="20150312 15:18:49.962"></status>
+</kw>
+<msg timestamp="20150312 15:18:50.000" level="INFO">${output} = ============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 3
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:50.000" starttime="20150312 15:18:49.961"></status>
+</kw>
+<msg timestamp="20150312 15:18:50.001" level="INFO">${output} = ============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 3
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:50.000" starttime="20150312 15:18:49.959"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:50.001" level="INFO">============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 3
+Poll Flag 0
+============================================================
+Request status:
+  statusCode="SRM_AUTHORIZATION_FAILURE"(3)
+  explanation="User 'Grid User (VOMS) =  DN:'C=IT, O=IGI, CN=test0' FQANS:[/test.vo/Role=NULL/Capability=NULL, /test.vo/G1/Role=NULL/Capability=NULL, /test.vo/G2/Role=NULL/Capability=NULL, /test.vo/G2/G3/Role=NULL/Capability=NULL]' is not authorized to access 'srm://cen"
+============================================================
+SRM Response:
+============================================================</msg>
+<status status="PASS" endtime="20150312 15:18:50.001" starttime="20150312 15:18:50.001"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:50.002" starttime="20150312 15:18:49.954"></status>
+</kw>
+<kw type="kw" name="credentials.Use proxy">
+<doc></doc>
+<arguments>
+<arg>${X509AUTH_SA_PROXY}</arg>
+</arguments>
+<kw type="kw" name="OperatingSystem.File Should Exist">
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<arguments>
+<arg>${proxypath}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:50.004" html="yes" level="INFO">File '&lt;a href="file:///tmp/storm-testsuite_15183512032015/testersgridproxy"&gt;/tmp/storm-testsuite_15183512032015/testersgridproxy&lt;/a&gt;' exists</msg>
+<status status="PASS" endtime="20150312 15:18:50.004" starttime="20150312 15:18:50.003"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Set Environment Variable">
+<doc>Sets an environment variable to a specified value.</doc>
+<arguments>
+<arg>X509_USER_PROXY</arg>
+<arg>${proxypath}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:50.004" level="INFO">Environment variable 'X509_USER_PROXY' set to value '/tmp/storm-testsuite_15183512032015/testersgridproxy'</msg>
+<status status="PASS" endtime="20150312 15:18:50.004" starttime="20150312 15:18:50.004"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:50.004" starttime="20150312 15:18:50.002"></status>
+</kw>
+<kw type="kw" name="setup.Clear remote working directory">
+<doc></doc>
+<arguments>
+<arg>${X509AUTH_SA}</arg>
+</arguments>
+<kw type="kw" name="${surl} = stormlib.Build surl">
+<doc></doc>
+<arguments>
+<arg>${storageArea}</arg>
+<arg>${TESTDIR}</arg>
+</arguments>
+<kw type="kw" name="${output} = BuiltIn.Set Variable">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>srm://${srmEndpoint}/srm/managerv2?SFN=/${storageArea}/${relativePath}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:50.007" level="INFO">${output} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/igi/storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:50.007" starttime="20150312 15:18:50.007"></status>
+</kw>
+<msg timestamp="20150312 15:18:50.008" level="INFO">${surl} = srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/igi/storm-testsuite_15183512032015</msg>
+<status status="PASS" endtime="20150312 15:18:50.008" starttime="20150312 15:18:50.006"></status>
+</kw>
+<kw type="kw" name="${output} = clientSRM.Perform rmdir using clientSRM">
+<doc></doc>
+<arguments>
+<arg>${surl}</arg>
+<arg>-r</arg>
+</arguments>
+<kw type="kw" name="${output} = clientSRM.Execute clientSRM Command on Surl">
+<doc></doc>
+<arguments>
+<arg>rmdir</arg>
+<arg>${surl}</arg>
+<arg>${options}</arg>
+</arguments>
+<kw type="kw" name="${output}, ${stderr} = stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>clientSRM ${cmd} ${options} -e ${srmEndpoint} -s ${surl}</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:50.012" level="INFO">Running command 'clientSRM rmdir -r -e centos6-devel.cnaf.infn.it:8444 -s srm://centos6-devel.cnaf.infn.it:8444/srm/managerv2?SFN=/igi/storm-testsuite_15183512032015 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:50.041" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:50.042" level="INFO">${output} = ============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:50.041" starttime="20150312 15:18:50.011"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:50.044" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:50.044" starttime="20150312 15:18:50.043"></status>
+</kw>
+<msg timestamp="20150312 15:18:50.044" level="INFO">${output} = ============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+=================...</msg>
+<msg timestamp="20150312 15:18:50.044" level="INFO">${stderr} = </msg>
+<status status="PASS" endtime="20150312 15:18:50.044" starttime="20150312 15:18:50.010"></status>
+</kw>
+<msg timestamp="20150312 15:18:50.045" level="INFO">${output} = ============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:50.045" starttime="20150312 15:18:50.009"></status>
+</kw>
+<msg timestamp="20150312 15:18:50.045" level="INFO">${output} = ============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+=================...</msg>
+<status status="PASS" endtime="20150312 15:18:50.045" starttime="20150312 15:18:50.008"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:50.046" level="INFO">============================================================
+Sending Rmdir request to: centos6-devel.cnaf.infn.it:8444
+Before execute:
+Afer execute:
+Request Status Code 0
+Poll Flag 0
+============================================================
+Request status:
+  statusCode="SRM_SUCCESS"(0)
+  explanation="Directory removed with success!"
+============================================================
+SRM Response:
+============================================================</msg>
+<status status="PASS" endtime="20150312 15:18:50.046" starttime="20150312 15:18:50.046"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:50.046" starttime="20150312 15:18:50.004"></status>
+</kw>
+<kw type="kw" name="credentials.Clear all credentials">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="credentials.Stop using certificate">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>rm ${usercert}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:50.050" level="INFO">Running command 'rm $HOME/.globus/usercert.pem 2&gt;&amp;1'</msg>
+<status status="PASS" endtime="20150312 15:18:50.053" starttime="20150312 15:18:50.048"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Run">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>rm -f ${userkey}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:50.056" level="INFO">Running command 'rm -f $HOME/.globus/userkey.pem 2&gt;&amp;1'</msg>
+<status status="PASS" endtime="20150312 15:18:50.058" starttime="20150312 15:18:50.054"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:50.059" starttime="20150312 15:18:50.048"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Set Environment Variable">
+<doc>Sets an environment variable to a specified value.</doc>
+<arguments>
+<arg>X509_USER_PROXY</arg>
+<arg>${DEFAULT_X509_USER_PROXY}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:50.060" level="INFO">Environment variable 'X509_USER_PROXY' set to value '/tmp/x509up_u500'</msg>
+<status status="PASS" endtime="20150312 15:18:50.061" starttime="20150312 15:18:50.060"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:50.061" starttime="20150312 15:18:50.047"></status>
+</kw>
+<kw type="kw" name="stormlib.Remove local directory">
+<doc></doc>
+<arguments>
+<arg>${TESTDIR}</arg>
+</arguments>
+<kw type="kw" name="stormlib.Execute and Check Success">
+<doc></doc>
+<arguments>
+<arg>rm -rf /tmp/${dirname}</arg>
+</arguments>
+<kw type="kw" name="${rc}, ${output} = OperatingSystem.Run And Return Rc And Output">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${cmd}</arg>
+</arguments>
+<msg timestamp="20150312 15:18:50.064" level="INFO">Running command 'rm -rf /tmp/storm-testsuite_15183512032015 2&gt;&amp;1'</msg>
+<msg timestamp="20150312 15:18:50.068" level="INFO">${rc} = 0</msg>
+<msg timestamp="20150312 15:18:50.068" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20150312 15:18:50.068" starttime="20150312 15:18:50.063"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Integers">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+<arg>${output}</arg>
+<arg>False</arg>
+</arguments>
+<msg timestamp="20150312 15:18:50.069" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20150312 15:18:50.069" starttime="20150312 15:18:50.069"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:50.070" starttime="20150312 15:18:50.062"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:50.070" starttime="20150312 15:18:50.061"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:50.070" starttime="20150312 15:18:49.662"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:50.070" starttime="20150312 15:18:49.661"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:50.070" starttime="20150312 15:18:49.661"></status>
+</kw>
+<status status="PASS" endtime="20150312 15:18:50.071" starttime="20150312 15:18:49.659"></status>
+</kw>
+<doc></doc>
+<metadata>
+</metadata>
+<status status="FAIL" endtime="20150312 15:18:50.071" starttime="20150312 15:18:35.686"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+<stat info="" links="" doc="" combined="" pass="0" fail="1">ptp</stat>
+<stat info="" links="" doc="" combined="" pass="0" fail="1">rm</stat>
+<stat info="" links="" doc="" combined="" pass="0" fail="1">STOR-779</stat>
+<stat info="" links="" doc="" combined="" pass="0" fail="1">storm-client</stat>
+</tag>
+<suite>
+<stat fail="1" pass="0" id="s1" name="Regressions">Regressions</stat>
+<stat fail="1" pass="0" id="s1-s1" name="STOR-779">Regressions.STOR-779</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -3,7 +3,6 @@
 
 VAGRANTFILE_API_VERSION = "2"
 GPFS_DISK_FILE = ENV['HOME']+'/gpfs/disk.vdi'
-
 STORM_BUILD_DIR = ENV['HOME'] + '/git/storm'
 STORM_WEBDAV_BUILD_DIR = ENV['HOME'] + '/git/storm-webdav'
 VOMS_ADMIN_BUILD_DIR = ENV['HOME'] + '/git/voms-admin-server'
@@ -15,19 +14,23 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "centos65"
   config.vm.box_url = "https://github.com/2creatives/vagrant-centos/releases/download/v6.5.3/centos65-x86_64-20140116.box"
 
-  config.vm.network :forwarded_port, guest: 8443, host: 4443
-  config.vm.network :forwarded_port, guest: 8085, host: 4085
-  config.vm.network :forwarded_port, guest: 8088, host: 4088
-  config.vm.network :forwarded_port, guest: 1044, host: 1044
+
+
+  config.vm.network "private_network", ip: "192.168.50.50"
+#  config.vm.network :forwarded_port, guest: 8443, host: 4443
+#  config.vm.network :forwarded_port, guest: 8085, host: 4085
+#  config.vm.network :forwarded_port, guest: 8088, host: 4088
+#  config.vm.network :forwarded_port, guest: 1044, host: 1044
 
   config.vm.hostname = "centos6-devel.cnaf.infn.it"
 
-  config.vm.synced_folder ENV['HOME'], "/opt/home", owner: "root", group: "root"
-  config.vm.synced_folder STORM_BUILD_DIR, "/opt/storm", owner: "root", group: "root"
-  config.vm.synced_folder STORM_WEBDAV_BUILD_DIR, "/opt/storm-webdav", owner: "vagrant", group: "vagrant"
-  config.vm.synced_folder VOMS_ADMIN_BUILD_DIR, "/opt/voms-admin", owner: "vagrant", group: "vagrant"
-  config.vm.synced_folder ARGUS_BUILD_DIR, "/opt/argus-pap", owner: "vagrant", group: "vagrant"
-  config.vm.synced_folder JREBEL_BASE_DIR, "/opt/jrebel", owner: "voms", group: "voms"
+  ## If you change the synced folders you will also have to change
+  ## the /etc/exports
+  config.vm.synced_folder STORM_BUILD_DIR, "/opt/storm"
+#  config.vm.synced_folder STORM_WEBDAV_BUILD_DIR, "/opt/storm-webdav", type: "nfs", nfs_export: false
+#  config.vm.synced_folder VOMS_ADMIN_BUILD_DIR, "/opt/voms-admin", type: "nfs", nfs_export: false
+#  config.vm.synced_folder ARGUS_BUILD_DIR, "/opt/argus-pap", type: "nfs", nfs_export: false
+#  config.vm.synced_folder JREBEL_BASE_DIR, "/opt/jrebel", type: "nfs", nfs_export: false
 
   config.ssh.forward_agent = true
 
@@ -39,16 +42,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       end
       ## attach gpfs disk to vm
       vb.customize ["storageattach", :id, "--storagectl", "SATA", "--port", 4, "--device", 0, "--type", "hdd", "--medium", GPFS_DISK_FILE]
+      vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+      vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
   end
 
-  config.vm.provision "shell", path: "boostrap-devel.sh"
-  config.vm.provision "puppet" do |puppet|
-    puppet.manifest_file = "default.pp"
-    puppet.module_path = "/etc/puppet/modules:/ci-puppet-modules/modules"
-  end
+  #config.vm.provision "shell", path: "boostrap-devel.sh"
+  #config.vm.provision "puppet" do |puppet|
+    #puppet.manifest_file = "default.pp"
+  #end
 
-  config.vm.provision "shell", path: "build-gpfs-kernel-extensions.sh"
-  config.vm.provision "shell", path: "gpfs-create-cluster.sh"
-  config.vm.provision "shell", path: "gpfs-create-fs.sh"
-  config.vm.provision "shell", path: "deploy-storm.sh"
+  #config.vm.provision "shell", path: "build-gpfs-kernel-extensions.sh"
+  #config.vm.provision "shell", path: "gpfs-create-cluster.sh"
+  #config.vm.provision "shell", path: "gpfs-create-fs.sh"
+  #config.vm.provision "shell", path: "deploy-storm.sh"
 end

@@ -1,6 +1,5 @@
 # Please keep the following in the order
 # in which they are listed.
-include puppet-users
 include puppet-gpfs-repo
 include puppet-gpfs
 include puppet-oracle-repo
